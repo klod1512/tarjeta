@@ -17,7 +17,7 @@ body {
 /* === CONTENEDOR PRINCIPAL DEL PASTEL (AJUSTADO PARA MÓVIL) === */
 .cake-container {
     position: absolute;
-    top: 50%; 
+    top: 80%; 
     left: 50%; 
     /* Esto lo centra, y luego lo sube notablemente (de 50% a 70% de subida). */
     transform: translate(-50%, -70%); 
@@ -267,6 +267,7 @@ body {
     border-radius: 50%;
     line-height: 0.8;
 }
+
 
 
 
