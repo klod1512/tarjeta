@@ -13,14 +13,13 @@ body {
     font-family: 'Gloria Hallelujah', cursive; 
 }
 
-/* === CONTENEDOR PRINCIPAL DEL PASTEL (AJUSTADO MÁS ABAJO) === */
+/* === CONTENEDOR PRINCIPAL DEL PASTEL (PERFECTAMENTE CENTRADO) === */
 .cake-container {
     position: absolute;
     top: 50%;
-    left:50%;
-    /* AJUSTE CLAVE: Cambiamos a -30%. 
-       -50% lo centra, -30% lo baja hacia la parte inferior. */
-    transform: translate(-50%, -30%); /* <-- PASTEL MÁS ABAJO */
+    left: 50%;
+    /* ESTE ES EL VALOR CLAVE: -50% centra el pastel verticalmente. */
+    transform: translate(-50%, -50%); /* <-- PASTEL CENTRADO */
     
     display: flex;
     justify-content: center;
@@ -37,7 +36,7 @@ body {
     width: 100%;
     height: auto;
     display: block;
-    /* Mantenemos el ajuste interno: */
+    /* Mueve el SVG ligeramente hacia arriba dentro de su contenedor. */
     transform: translateY(-80px); 
 }
 
@@ -48,7 +47,8 @@ body {
 /* === VELAS (Posición inicial - OCULTA ARRIBA) === */
 .vela-cera {
     position: absolute;
-    top: 80%; /* Vela inicia muy arriba */
+    /* Corrección: La vela inicia muy arriba para el efecto de caída. */
+    top: 1%; 
     left: 50%;
     transform: translateX(-50%);
     opacity: 0; 
@@ -59,10 +59,8 @@ body {
 
 /* === POSICIÓN FINAL DE LA VELA (CAE SOBRE EL PASTEL) === */
 .cake-container.mostrar-vela .vela-cera {
-    /* La vela sigue cayendo sobre el pastel */
-    top: 90%; 
+    /* La vela cae sobre la parte superior del pastel. Ajusta si es necesario (e.g., a 50%). */
+    top: 45%; 
     left:50%;
     opacity: 1;
 }
-
-
