@@ -5,88 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Para el mejor novio del mundo - ¡Feliz Cumpleaños!</title>
     
-    <link rel="stylesheet" href="style.css"> 
-    
-    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
 
     <style>
         /* ======================================= */
-        /* ESTILOS DE PÁGINA Y CONTENEDORES */
+        /* ESTILOS DE ANIMACIÓN Y TARJETA (DEJADOS EN HTML POR CONVENIENCIA) */
         /* ======================================= */
-       <style>
-    /* ======================================= */
-    /* ESTILOS DE PÁGINA Y CONTENEDORES */
-  /* ======================================= */
-/* ESTILOS BASE */
-/* ======================================= */
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    color: rgb(233, 226, 238);
-    background-color: rgb(81, 26, 81); /* Fondo Morado */
-    overflow: hidden;
-    font-family: 'Gloria Hallelujah', cursive; 
-}
-
-/* ======================================= */
-/* AJUSTE DE POSICIÓN CLAVE */
-/* ======================================= */
-
-/* === CONTENEDOR PRINCIPAL DEL PASTEL (AJUSTADO MÁS ABAJO) === */
-.cake-container {
-    position: absolute; 
-    top: 50%; 
-    left: 50%;
-    /* AJUSTE CLAVE PARA BAJAR EL PASTEL: 
-       -50% era centrado. -20% lo acerca a la parte inferior. */
-    transform: translate(-50%, -20%); /* <-- PASTEL MÁS ABAJO */
-    
-    width: 95vw;
-    height: 95vh;
-    max-width: 400px; 
-    max-height: 850px;
-    position: relative; 
-}
-
-/* === SVG DEL PASTEL (AJUSTE INTERNO) === */
-#cake {
-    width: 100%;
-    height: auto;
-    display: block;
-    /* Mantiene el ajuste interno para que el SVG quede dentro del contenedor */
-    transform: translateY(-80px); 
-}
-
-/* ======================================= */
-/* AJUSTES DE VELA */
-/* ======================================= */
-
-/* === VELAS (Posición inicial - OCULTA ARRIBA) === */
-.vela-cera {
-    position: absolute;
-    top: 1%; 
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0; 
-    transition: top 0.25s ease-out, opacity 0.25s ease-out;
-    z-index: 10; 
-    cursor: pointer; 
-}
-
-/* === POSICIÓN FINAL DE LA VELA (CAE SOBRE EL PASTEL) === */
-.cake-container.mostrar-vela .vela-cera {
-    /* Mantiene la vela cayendo sobre la parte superior del pastel (40% de su contenedor) */
-    top: 40%; 
-    left:50%;
-    opacity: 1;
-}
-
+        
         /* === TEXTO CENTRAL (TITULAR) === */
         .birthday-text {
-            position: fixed; /* Lo fijamos para que no afecte el pastel */
+            position: fixed;
             top: 50px; 
             left: 50%;
             transform: translateX(-50%);
@@ -96,7 +24,7 @@ body {
             transition: opacity 1s;
             font-family: 'Gloria Hallelujah', cursive;
             font-size: 2em;
-            pointer-events: none; /* Permite hacer clic en lo que hay debajo */
+            pointer-events: none;
             width: 90%;
             max-width: 400px;
         }
@@ -107,7 +35,7 @@ body {
         }
         
         /* ======================================= */
-        /* ESTILOS DE CONFETI, HUMO Y DESTELLO (CRÍTICO PARA LA ANIMACIÓN) */
+        /* ESTILOS DE CONFETI, HUMO Y DESTELLO */
         /* ======================================= */
         
         .confetti-container {
@@ -183,7 +111,7 @@ body {
         }
         
         /* ======================================= */
-        /* ESTILOS DE TARJETA (Los puedes mover a style.css) */
+        /* ESTILOS DE TARJETA */
         /* ======================================= */
         .mini-card, .expanded-card {
             background-color: white;
@@ -225,7 +153,7 @@ body {
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            overflow-y: scroll; /* Permite desplazamiento */
+            overflow-y: scroll;
             text-align: left;
             line-height: 1.6;
         }
@@ -235,7 +163,7 @@ body {
         }
         
         .close-btn {
-            position: sticky; /* Se queda arriba al hacer scroll */
+            position: sticky;
             top: 0;
             float: right;
             font-size: 2em;
@@ -246,6 +174,8 @@ body {
             border-radius: 50%;
             line-height: 0.8;
         }
+        
+
         
     </style>
 </head>
