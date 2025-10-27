@@ -15,16 +15,13 @@ body {
 }
 
 /* === CONTENEDOR PRINCIPAL DEL PASTEL (AJUSTADO PARA MÓVIL) === */
-/* === CONTENEDOR PRINCIPAL DEL PASTEL (AJUSTADO PARA MÓVIL) === */
 .cake-container {
     position: absolute;
     top: 50%;
-    /* 🚨 1. Vuelve a 50% para que el punto de referencia sea el centro de la pantalla */
-    left: 60%; 
-    /* 🚨 2. Ajusta el translateX para moverlo a la izquierda y el translateY para la altura */
-    /* -60% en X lo mueve 10% más a la izquierda de lo normal. */
-    /* Si quieres moverlo más a la izquierda, usa -65%, -70%, etc. */
-    transform: translate(-45%, -50%); 
+    left: 50%; 
+    /* 🚨 CAMBIO AQUÍ: Usar un valor MENOS NEGATIVO que -50% mueve el pastel a la derecha. */
+    /* Por ejemplo, -45% lo mueve a la derecha. */
+    transform: translate(-45%, -60%); 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -278,6 +275,7 @@ body {
     border-radius: 50%;
     line-height: 0.8;
 }
+
 
 
 
