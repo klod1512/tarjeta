@@ -15,15 +15,20 @@ body {
 }
 
 /* === CONTENEDOR PRINCIPAL DEL PASTEL (AJUSTADO PARA MÓVIL) === */
+/* === CONTENEDOR PRINCIPAL (CORREGIDO PARA MÓVIL) === */
 .cake-container {
-    position: absolute;
-    top: 400%; 
-    left: 50%; 
-    /* Esto lo centra, y luego lo sube notablemente (de 50% a 70% de subida). */
-    transform: translate(-50%, -70%); 
-    /* ... (otras propiedades) ... */
-}
-#cake {
+    /* CAMBIOS CLAVE: Usar Flexbox para un centrado interno */
+    display: flex; /* <-- CAMBIO */
+    justify-content: center; /* <-- CAMBIO (Centrado Horizontal del contenido) */
+    align-items: center; /* <-- CAMBIO (Centrado Vertical del contenido) */
+    
+    margin: 0 auto;
+    /* Controla el tamaño en diferentes pantallas */
+    width: 95vw;
+    height: 95vh;
+    max-width: 400px;
+    max-height: 850px;
+}cake {
     width: 100%;
     height: auto;
     display: block;
@@ -267,6 +272,7 @@ body {
     border-radius: 50%;
     line-height: 0.8;
 }
+
 
 
 
