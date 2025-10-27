@@ -29,6 +29,7 @@ body {
     height: 95vh;
     max-width: 400px; 
     max-height: 850px;
+    position: relative;
 }
 
 #cake {
@@ -62,6 +63,7 @@ body {
     left:50%;
     opacity: 1;
 }
+
 
 
 
