@@ -35,7 +35,7 @@ body {
     width: 100%;
     height: auto;
     display: block;
-    transform: translateY(-20px); /* Ajuste vertical para centrar el pastel */
+    transform: translateY(-50px); /* Ajuste vertical para centrar el pastel */
 }
 
 /* === VELAS === */
@@ -275,4 +275,5 @@ body {
     border-radius: 50%;
     line-height: 0.8;
 }
+
 
