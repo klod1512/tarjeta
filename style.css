@@ -19,14 +19,15 @@ body {
 
 /* === CONTENEDOR PRINCIPAL DEL PASTEL (POSICIÓN FINAL: INFERIOR IZQUIERDA) === */
 .cake-container {
+    /* Esto debe estar en style.css para que la corrección de posición funcione */
+.cake-container {
     position: absolute; 
     top: 50%; 
     left: 50%;
-    /* 1. Mover a la Izquierda (Horizontal): Usamos -80% para empujar lejos del centro.
-       2. Bajar (Vertical): Usamos un valor cercano a 0% (como -10%) para que la parte
-          superior del pastel quede cerca de la base de la pantalla. */
-    transform: translate(-80%, -10%); /* <-- CORREGIDO: MÁS A LA IZQUIERDA Y ABAJO */
-    
+    /* Posición Inferior-Izquierda */
+    transform: translate(-80%, -10%); /* Ajusta estos valores si quieres moverlo más */
+    /* ... el resto del CSS del .cake-container, body, .vela-cera, etc. ... */
+}
     width: 95vw;
     height: 95vh;
     max-width: 400px; 
@@ -66,3 +67,4 @@ body {
     left:50%;
     opacity: 1;
 }
+
