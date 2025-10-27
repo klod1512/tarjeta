@@ -16,7 +16,7 @@
     position: absolute;
     /* Posición centrada en la parte inferior del contenedor */
     bottom: 200px; 
-    left: 80%;
+    left: 400%;
     transform: translateX(-50%);
 
     /* Dimensiones para que sea visible (AJUSTA ESTOS VALORES si tu pastel es más complejo) */
@@ -282,6 +282,7 @@
     opacity: 1; 
     visibility: visible;
     transform: translate(-50%, -50%) scale
+
 
 
 
