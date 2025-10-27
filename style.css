@@ -35,9 +35,9 @@ body {
     width: 100%;
     height: auto;
     display: block;
-    transform: translateY(0); /* Se eliminó el ajuste, el transform del contenedor principal es suficiente */
+    /* Movemos el SVG (el pastel) 150px hacia ARRIBA dentro de su contenedor. */
+    transform: translateY(-150px); 
 }
-
 /* === VELAS === */
 .vela-cera {
     position: absolute;
@@ -59,6 +59,7 @@ body {
 /* Ajuste la posición final de la vela sobre el pastel */
 .cake-container.mostrar-vela .vela-cera {
     top: 18%; /* Posición final de aterrizaje sobre el pastel */
+
 
 
 
