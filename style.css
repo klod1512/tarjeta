@@ -19,7 +19,7 @@ body {
     position: absolute;
     top: 50%;
     left: 15%;
-    transform: translate(-50%, -50%); /* Centra el contenedor del pastel */
+    transform: translate(-55%, -50%); /* Centra el contenedor del pastel */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -275,6 +275,7 @@ body {
     border-radius: 50%;
     line-height: 0.8;
 }
+
 
 
 
