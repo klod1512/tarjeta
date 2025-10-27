@@ -19,15 +19,15 @@ body {
 
 /* === CONTENEDOR PRINCIPAL DEL PASTEL (POSICIÓN FINAL: INFERIOR IZQUIERDA) === */
 .cake-container {
-    /* Esto debe estar en style.css para que la corrección de posición funcione */
-.cake-container {
     position: absolute; 
-    top: 100%; 
+    top: 50%; /* Punto de partida para el cálculo de la posición vertical */
     left: 50%;
-    /* Posición Inferior-Izquierda */
-    transform: translate(-95%, -10%); /* Ajusta estos valores si quieres moverlo más */
-    /* ... el resto del CSS del .cake-container, body, .vela-cera, etc. ... */
-}
+    
+    /* Posición Inferior-Izquierda:
+       -95% (Horizontal): Lo mueve casi al borde izquierdo.
+       -10% (Vertical): Lo mueve ligeramente hacia arriba de la mitad. */
+    transform: translate(-95%, -10%); 
+    
     width: 95vw;
     height: 95vh;
     max-width: 400px; 
@@ -40,7 +40,7 @@ body {
     width: 100%;
     height: auto;
     display: block;
-    /* Mantiene el ajuste para subir el SVG dentro de su contenedor, esencial para el diseño. */
+    /* Mantiene el ajuste para subir el SVG dentro de su contenedor. */
     transform: translateY(-80px); 
 }
 
@@ -48,10 +48,9 @@ body {
 /* AJUSTES DE VELA */
 /* ======================================= */
 
-/* === VELAS (Posición inicial - OCULTA ARRIBA) === */
-/* --- ESTILOS AGREGADOS PARA DIBUJAR LA VELA --- */
+/* === VELAS (Posición inicial y apariencia) === */
 .vela-cera {
-    /* (Mantiene las propiedades de posición que ya tienes) */
+    /* Posición inicial */
     position: absolute;
     top: 1%;
     left: 50%;
@@ -61,27 +60,18 @@ body {
     z-index: 10; 
     cursor: pointer; 
     
-    /* PROPIEDADES NUEVAS PARA DIBUJAR LA CERA */
-    width: 10px;        /* Ancho de la vela */
-    height: 50px;       /* Altura de la vela */
-    background: #fdf5d5; /* Color de la cera (blanco/crema claro) */
+    /* PROPIEDADES PARA DIBUJAR LA CERA (AGREGADAS) */
+    width: 10px;
+    height: 50px;
+    background: #fdf5d5;
     border-radius: 2px;
 }
 
-
+/* === POSICIÓN FINAL DE LA VELA (CAE SOBRE EL PASTEL) === */
 .cake-container.mostrar-vela .vela-cera {
-    /* AJUSTA ESTE VALOR: 40% o 35% deberían funcionar bien. */
-    top: 38%; /* Usa este valor para que quede justo encima del pastel */
-    left:50%;
+    top: 38%; /* Posición encima del pastel (ajustable) */
+    left: 50%;
     opacity: 1;
 }
 
-
-
-
-
-
-
-
-
-
+/* [Añade aquí los estilos de la flama, humo, y confetti si no están en el HTML] */
