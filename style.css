@@ -17,7 +17,7 @@ body {
 .cake-container {
     position: absolute;
     top: 50%;
-    left:80%;
+    left:50%;
     /* AJUSTE CLAVE: Cambiamos a -30%. 
        -50% lo centra, -30% lo baja hacia la parte inferior. */
     transform: translate(-50%, -30%); /* <-- PASTEL MÁS ABAJO */
@@ -48,7 +48,7 @@ body {
 /* === VELAS (Posición inicial - OCULTA ARRIBA) === */
 .vela-cera {
     position: absolute;
-    top: 1%; /* Vela inicia muy arriba */
+    top: 80%; /* Vela inicia muy arriba */
     left: 50%;
     transform: translateX(-50%);
     opacity: 0; 
@@ -60,8 +60,9 @@ body {
 /* === POSICIÓN FINAL DE LA VELA (CAE SOBRE EL PASTEL) === */
 .cake-container.mostrar-vela .vela-cera {
     /* La vela sigue cayendo sobre el pastel */
-    top: 45%; 
+    top: 90%; 
     left:50%;
     opacity: 1;
 }
+
 
