@@ -16,11 +16,11 @@ body {
 /* === CONTENEDOR PRINCIPAL DEL PASTEL (CORREGIDO PARA CENTRADO Y POSICIÓN ALTA) === */
 .cake-container {
     position: absolute;
-    top: 200%; /* Punto de inicio vertical en el centro */
+    top: 50%; /* Punto de inicio vertical en el centro */
     left: 50%; /* Punto de inicio horizontal en el centro */
     
     /* CORRECCIÓN CLAVE: Centra horizontalmente (-50%) y sube notablemente (-70%) */
-    transform: translate(-50%, -70%); 
+    transform: translate(-50%, -100%); 
     
     display: flex;
     justify-content: center;
@@ -60,5 +60,6 @@ body {
 /* Ajuste la posición final de la vela sobre el pastel */
 .cake-container.mostrar-vela .vela-cera {
     top: 18%; /* Posición final de aterrizaje sobre el pastel */
+
 
 
