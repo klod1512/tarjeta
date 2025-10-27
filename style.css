@@ -58,10 +58,11 @@ body {
        debes AUMENTAR este porcentaje. 
        Prueba con un valor más alto, como 40%, 45% o incluso 50%.
     */
-    top: 80%; /* <-- ¡PRUEBA ESTE NUEVO VALOR! */
+    top:-10%; /* <-- ¡PRUEBA ESTE NUEVO VALOR! */
     left:50%;
     opacity: 1;
 }
+
 
 
 
