@@ -18,7 +18,7 @@ body {
 .cake-container {
     position: absolute;
     /* 1. Mueve el punto de referencia al 50% vertical */
-    top: 50%; 
+    top: %; 
     /* 2. Mueve el punto de referencia al 50% horizontal */
     left: 50%; 
     /* 3. Usa translate para centrarlo y ajustarlo: */
@@ -286,6 +286,7 @@ body {
     border-radius: 50%;
     line-height: 0.8;
 }
+
 
 
 
