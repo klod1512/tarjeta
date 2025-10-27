@@ -66,7 +66,7 @@ body {
 /* === POSICIÓN FINAL DE LA VELA (CAE SOBRE EL PASTEL) === */
 .cake-container.mostrar-vela .vela-cera {
     /* Si top: 35% ya la hace visible, esta regla solo la confirma */
-    top: 35%; 
+    top: 80%; 
     left: 50%;
     opacity: 1;
     visibility: visible;
@@ -176,5 +176,6 @@ body {
 
 /* Eliminadas las keyframes flame-movement no usadas en favor de fuego/llama-sway */
 /* Eliminados los bloques de código rotos o duplicados */
+
 
 
