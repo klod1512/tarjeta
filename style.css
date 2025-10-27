@@ -1,5 +1,5 @@
 /* ======================================= */
-/* ESTILOS DE PÁGINA Y CONTENEDORES */
+/* ESTILOS BASE */
 /* ======================================= */
 body {
     display: flex;
@@ -13,17 +13,19 @@ body {
     font-family: 'Gloria Hallelujah', cursive; 
 }
 
-/* === CONTENEDOR PRINCIPAL DEL PASTEL (PERFECTAMENTE CENTRADO) === */
+/* ======================================= */
+/* AJUSTE DE POSICIÓN CLAVE */
+/* ======================================= */
+
+/* === CONTENEDOR PRINCIPAL DEL PASTEL (AJUSTADO MÁS ABAJO) === */
 .cake-container {
-    position: absolute;
-    top: 50%;
+    position: absolute; 
+    top: 50%; 
     left: 50%;
-    /* ESTE ES EL VALOR CLAVE: -50% centra el pastel verticalmente. */
-    transform: translate(-50%, -50%); /* <-- PASTEL CENTRADO */
+    /* AJUSTE CLAVE PARA BAJAR EL PASTEL: 
+       -50% era centrado. -20% lo acerca a la parte inferior. */
+    transform: translate(-50%, -20%); /* <-- PASTEL MÁS ABAJO */
     
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 95vw;
     height: 95vh;
     max-width: 400px; 
@@ -36,18 +38,17 @@ body {
     width: 100%;
     height: auto;
     display: block;
-    /* Mueve el SVG ligeramente hacia arriba dentro de su contenedor. */
+    /* Mantiene el ajuste interno para que el SVG quede dentro del contenedor */
     transform: translateY(-80px); 
 }
 
 /* ======================================= */
-/* ESTILOS DE LA VELA */
+/* AJUSTES DE VELA */
 /* ======================================= */
 
 /* === VELAS (Posición inicial - OCULTA ARRIBA) === */
 .vela-cera {
     position: absolute;
-    /* Corrección: La vela inicia muy arriba para el efecto de caída. */
     top: 1%; 
     left: 50%;
     transform: translateX(-50%);
@@ -59,8 +60,8 @@ body {
 
 /* === POSICIÓN FINAL DE LA VELA (CAE SOBRE EL PASTEL) === */
 .cake-container.mostrar-vela .vela-cera {
-    /* La vela cae sobre la parte superior del pastel. Ajusta si es necesario (e.g., a 50%). */
-    top: 45%; 
+    /* Mantiene la vela cayendo sobre la parte superior del pastel (40% de su contenedor) */
+    top: 40%; 
     left:50%;
     opacity: 1;
 }
