@@ -24,7 +24,7 @@ body {
     left: 50%;
     /* AJUSTE CLAVE PARA BAJAR EL PASTEL: 
        -50% era centrado. -20% lo acerca a la parte inferior. */
-    transform: translate(-50%, -20%); /* <-- PASTEL MÁS ABAJO */
+    transform: translate(-50%, -80%); /* <-- PASTEL MÁS ABAJO */
     
     width: 95vw;
     height: 95vh;
@@ -65,4 +65,5 @@ body {
     left:80%;
     opacity: 1;
 }
+
 
