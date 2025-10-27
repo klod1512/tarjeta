@@ -25,7 +25,7 @@ body {
     /* AJUSTE CLAVE: 
        -70% (Horizontal) mueve el pastel más a la izquierda.
        -20% (Vertical) lo mantiene en la parte inferior. */
-    transform: translate(-70%, -20%); /* <-- PASTEL MÁS A LA IZQUIERDA */
+    transform: translate(-80%, -20%); /* <-- PASTEL MÁS A LA IZQUIERDA */
     
     width: 95vw;
     height: 95vh;
@@ -65,3 +65,4 @@ body {
     left:50%;
     opacity: 1;
 }
+
