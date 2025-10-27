@@ -19,12 +19,12 @@ body {
 /* === CONTENEDOR PRINCIPAL DEL PASTEL (AJUSTADO PARA MÓVIL) === */
 .cake-container {
     position: absolute;
-    top: 40%;
+    top: 100%;
     left: 40%; 
     /* 🚨 CAMBIO CRÍTICO AQUÍ: Usamos un valor POSITIVO para moverlo mucho a la derecha */
     /* La traslación de +50% en X, cancela el 50% de left, poniendo el pastel 
        100% a la derecha del centro. Luego, lo ajustamos. */
-    transform: translate(60%, -60%); /* Lo moverá notablemente a la derecha del centro. */
+    transform: translate(10%, -60%); /* Lo moverá notablemente a la derecha del centro. */
     display: flex;
     /* ... (resto del código) ... */
 }
@@ -272,6 +272,7 @@ body {
     border-radius: 50%;
     line-height: 0.8;
 }
+
 
 
 
