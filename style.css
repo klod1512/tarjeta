@@ -25,7 +25,7 @@ body {
     top: 50%; 
     left: 50%;
     /* Posición Inferior-Izquierda */
-    transform: translate(-80%, -10%); /* Ajusta estos valores si quieres moverlo más */
+    transform: translate(-80%, -100%); /* Ajusta estos valores si quieres moverlo más */
     /* ... el resto del CSS del .cake-container, body, .vela-cera, etc. ... */
 }
     width: 95vw;
@@ -67,4 +67,5 @@ body {
     left:50%;
     opacity: 1;
 }
+
 
