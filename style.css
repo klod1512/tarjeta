@@ -42,7 +42,7 @@ body {
     height: auto;
     display: block;
     /* Movemos el SVG (el pastel) 150px hacia ARRIBA dentro de su contenedor. */
-    transform: translateY(-150px); 
+    transform: translateY(-70px); 
 }
 /* EN TU ARCHIVO style.css */
 
@@ -71,6 +71,7 @@ body {
     left:50%;
     opacity: 1;
 }
+
 
 
 
