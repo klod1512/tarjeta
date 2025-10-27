@@ -31,20 +31,21 @@
 /* ======================================= */
 /* 1. Estilos de la Vela Completa (Cera) */
 /* ======================================= */
+/* === VELAS (AJUSTE AQUÍ) === */
 .vela-cera {
     position: absolute;
-    top: -50%; /* Posición inicial fuera de la vista */
-    left: 50%; /* Centrado sobre el pastel */
+    /* CAMBIA ESTO: Pon un valor negativo para que empiece por encima del pastel */
+    top: -50px; 
+    left: 50%;
     transform: translateX(-50%);
-    opacity: 0;
-    transition: top 0.25s ease-out, opacity 0.25s ease-out;
-
-    width: 10px;
-    height: 60px;
-    background-color: #d23763; /* Color de cera */
-    z-index: 10;
+    opacity: 0; 
+    transition: top 0.5s ease-out, opacity 0.5s ease-out; /* Aumenté la duración a 0.5s para que se vea mejor la caída */
+    z-index: 10; 
+    cursor: pointer; 
+    /* Ajuste el tamaño de la vela para que no sea demasiado grande en móvil */
+    width: 20px; 
+    height: 80px; 
 }
-
 .vela-cera.swaying {
     animation: candle-sway 3s infinite alternate ease-in-out;
 }
@@ -281,3 +282,4 @@
     opacity: 1; 
     visibility: visible;
     transform: translate(-50%, -50%) scale
+
