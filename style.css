@@ -36,7 +36,7 @@
     position: absolute;
     /* CAMBIA ESTO: Pon un valor negativo para que empiece por encima del pastel */
     top: -50px; 
-    left: 50%;
+    left: 75%;
     transform: translateX(-50%);
     opacity: 0; 
     transition: top 0.5s ease-out, opacity 0.5s ease-out; /* Aumenté la duración a 0.5s para que se vea mejor la caída */
@@ -282,4 +282,5 @@
     opacity: 1; 
     visibility: visible;
     transform: translate(-50%, -50%) scale
+
 
