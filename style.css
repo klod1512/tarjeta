@@ -58,10 +58,11 @@ body {
 /* === POSICIÓN FINAL DE LA VELA (AJUSTE MÁS ABAJO) === */
 .cake-container.mostrar-vela .vela-cera {
     /* El valor original era 33%. Lo aumentamos a 55% para que baje mucho. */
-    top: 55%; /* <--- Puedes probar con 50%, 55%, o 60% para ver cuál queda mejor. */
+    top: 150%; /* <--- Puedes probar con 50%, 55%, o 60% para ver cuál queda mejor. */
     left:50%;
     opacity: 1;
 }
+
 
 
 
