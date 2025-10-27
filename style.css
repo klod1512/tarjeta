@@ -1,288 +1,277 @@
 /* ======================================= */
-/* 0. Centrado del Contenedor Principal */
+/* ESTILOS DE PÁGINA Y CONTENEDORES */
 /* ======================================= */
-.cake-container {
-    position: relative;
-    display: block;
-    margin: 0 auto;
-    width: 800px; /* Tamaño grande, ajustaremos los elementos dentro */
-    height: 800px;
-}
-
-/* ======================================= */
-/* 0.5. ESTILOS DEL PASTEL (#cake) - ¡AÑADIDO! */
-/* ======================================= */
-#cake {
-    position: absolute;
-    /* Posición centrada en la parte inferior del contenedor */
-    bottom: 200px; 
-    left: 400%;
-    transform: translateX(-50%);
-
-    /* Dimensiones para que sea visible (AJUSTA ESTOS VALORES si tu pastel es más complejo) */
-    width: 300px;
-    height: 150px;
-    background-color: #f7a0b5; /* Color base de ejemplo */
-    border-radius: 10px 10px 0 0;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    z-index: 5; /* Asegura que esté por debajo de la vela */
-}
-
-/* ======================================= */
-/* 1. Estilos de la Vela Completa (Cera) */
-/* ======================================= */
-/* === VELAS (AJUSTE AQUÍ) === */
-.vela-cera {
-    position: absolute;
-    /* CAMBIA ESTO: Pon un valor negativo para que empiece por encima del pastel */
-    top: -50px; 
-    left: 75%;
-    transform: translateX(-50%);
-    opacity: 0; 
-    transition: top 0.5s ease-out, opacity 0.5s ease-out; /* Aumenté la duración a 0.5s para que se vea mejor la caída */
-    z-index: 10; 
-    cursor: pointer; 
-    /* Ajuste el tamaño de la vela para que no sea demasiado grande en móvil */
-    width: 20px; 
-    height: 80px; 
-}
-.vela-cera.swaying {
-    animation: candle-sway 3s infinite alternate ease-in-out;
-}
-
-/* ======================================= */
-/* 2. Estilos de la Flama y el Fuego */
-/* ======================================= */
-.fuego-llama-onda {
-    position: absolute;
-    top: -22px;
-    left: 50%; /* Centra la flama */
-    transform: translateX(-50%);
-    width: 10px;
-    height: 25px;
-    transform-origin: bottom center;
-}
-
-.llama-onda {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: #e1e0de;
-    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-    box-shadow:
-        0 0 10px 3px #fac104,
-        0 0 20px 5px #f67a28;
-    z-index: 2;
-    animation: flame-movement 1.5s infinite alternate ease-in-out; /* Aplica la animación aquí */
-}
-
-.fuego-onda {
-    position: absolute;
-    width: 150%;
-    height: 150%;
-    top: -25%;
-    left: -25%;
-    background-color: #ecd90b;
-    border-radius: 50%;
-    filter: blur(2px);
-    opacity: 0.7;
-    z-index: 0;
-}
-
-/* Ajuste de keyframes para la llama */
-@keyframes flame-movement {
-    0% { transform: translateX(0%) rotate(2deg); }
-    33% { transform: translateX(-10%) rotate(3deg); }
-    66% { transform: translateX(10%) rotate(-3deg); }
-    100% { transform: translateX(0%) rotate(0deg); }
-}
-
-/* Keyframes para el balanceo de la cera */
-@keyframes candle-sway {
-    0% { transform: translateX(-50%) rotate(1deg); }
-    50% { transform: translateX(-50%) rotate(-1deg); }
-    100% { transform: translateX(-50%) rotate(1deg); }
-}
-
-/* ======================================= */
-/* 5. Estilos de Visibilidad/Caída de la Vela */
-/* ======================================= */
-.cake-container.mostrar-vela .vela-cera {
-    /* Nueva Posición Final: AJUSTA este valor (en px o %) para que quede sobre tu pastel */
-    top: 52%; 
-    opacity: 1;
-    visibility: visible;
-}
-
-/* ======================================= */
-/* 6. Estilos del Confeti y Humo */
-/* ======================================= */
-.confetti-container {
-    position: fixed;
-    top: 0; /* Cambio a 0 para cubrir toda la pantalla */
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none;
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: rgb(233, 226, 238);
+    background-color: rgb(81, 26, 81); /* Fondo Morado */
     overflow: hidden;
-    z-index: 500;
-    opacity: 0;
-    transition: opacity 0.5s;
+    /* Fuente utilizada para los textos, ya debe estar enlazada en el HTML */
+    font-family: 'Gloria Hallelujah', cursive; 
 }
 
-.confetti-container.explode {
-    opacity: 1;
-    animation: explode-fade-out 0.10s forwards;
-}
-
-.confetti-container.explode:before {
-    content: '';
+/* === CONTENEDOR PRINCIPAL DEL PASTEL (AJUSTADO PARA MÓVIL) === */
+.cake-container {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); /* Centra el contenedor del pastel */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
+    max-width: 400px;
     height: 100%;
-    box-shadow:
-        /* Añade muchos puntos de color para simular la explosión */
-        15px -15px 0 1px #ff00ff, 30px 25px 0 1px #ffc0cb,
-        /* ... el resto de tu box-shadow ... */
-        25px 0px 0 1px #780762, -25px 0px 0 1px #f8a604,
-        0px 20px 0 1px #ff00ff, 0px -25px 0 1px #780762,
-        30px 10px 0 1px #ffc0cb, -30px 10px 0 1px #f8a604,
-        10px -30px 0 1px #ff00ff, -10px -30px 0 1px #780762;
-    
-    animation: confetti-scatter 0.10s forwards;
+    max-height: 850px;
+    background-color: transparent;
 }
 
-/* No hay keyframes para confetti-scatter o explode-fade-out, asumo que existen o son opcionales */
+/* === SVG del PASTEL === */
+#cake {
+    width: 100%;
+    height: auto;
+    display: block;
+    transform: translateY(-20px); /* Ajuste vertical para centrar el pastel */
+}
+
+/* === VELAS === */
+.vela-cera {
+    position: absolute;
+    /* AJUSTE CLAVE: Comienza por encima para que la caída sea visible */
+    top: -50px; 
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    /* Aumentamos la duración a 0.5s para que la caída sea notoria */
+    transition: top 0.5s ease-out, opacity 0.5s ease-out; 
+    z-index: 10;
+    cursor: pointer;
+    width: 20px;
+    height: 80px;
+    background-color: #fefae9; /* Color de la cera */
+    border-radius: 5px;
+}
+
+/* Ajuste la posición final de la vela sobre el pastel */
+.cake-container.mostrar-vela .vela-cera {
+    top: 18%; /* Posición final de aterrizaje sobre el pastel */
+    opacity: 1;
+}
+
+/* === FUEGO DE LA LLAMA === */
+.fuego-llama-onda {
+    position: absolute;
+    bottom: 100%; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 18px;
+    height: 30px;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.2s, visibility 0.2s;
+    overflow: hidden;
+    z-index: 20;
+}
+
+.fuego-onda, .llama-onda {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50% 50% 50% 50%;
+    filter: blur(2px);
+    animation: flame-sway 3s ease-in-out infinite;
+}
+
+.fuego-onda {
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 90%, rgba(255, 200, 0, 0.8) 0%, rgba(255, 100, 0, 0.6) 50%, rgba(255, 0, 0, 0) 100%);
+}
+
+.llama-onda {
+    width: 70%;
+    height: 70%;
+    background: radial-gradient(circle at 50% 80%, rgba(255, 255, 150, 0.9) 0%, rgba(255, 200, 0, 0.7) 50%, rgba(255, 0, 0, 0) 100%);
+    animation-delay: -1.5s;
+}
+
+@keyframes flame-sway {
+    0%, 100% { transform: translateX(-50%) rotate(0deg); }
+    25% { transform: translateX(-55%) rotate(-2deg); }
+    75% { transform: translateX(-45%) rotate(2deg); }
+}
+
+/* === TEXTO CENTRAL (TITULAR) === */
+.birthday-text {
+    position: fixed;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 20;
+    opacity: 0;
+    transition: opacity 1s;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 1.5em;
+    pointer-events: none;
+    width: 90%;
+    max-width: 400px;
+}
+.birthday-text h1 {
+    font-size: 1em;
+    line-height: 1.2;
+    margin: 0;
+}
+
+/* ======================================= */
+/* ESTILOS DE CONFETI, HUMO Y DESTELLO */
+/* ======================================= */
+
+.confetti-container {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 500;
+}
+
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background-color: #ffeb3b;
+    opacity: 0;
+    animation: none;
+    border-radius: 150%;
+}
+
+.confetti-container.explode .confetti {
+    animation: confetti-fall 10s forwards ease-out;
+}
+
+@keyframes confetti-fall {
+    0% { opacity: 1; transform: translate(0, 0) rotate(0deg); }
+    100% { opacity: 0; transform: translate(var(--x), var(--y)) rotate(var(--rot)); }
+}
 
 .smoke-puff {
     position: fixed;
     width: 20px;
     height: 20px;
-    background-color: #2a2929;
+    background-color: #7b7878;
     border-radius: 50%;
     filter: blur(5px);
     opacity: 0;
     transform: scale(0);
     z-index: 9;
     pointer-events: none;
-    transition: opacity 1.5s ease-out, transform 1.5s ease-out, top 6s ease-out;
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out, top 1.5s ease-out;
 }
 
 .smoke-puff.active {
     opacity: 0.8;
-    transform: scale(2.5);
+    transform: scale(4);
 }
 
 .hint-glow {
     position: fixed;
-    width: 30px;
+    width: 20px;
     height: 20px;
-    background: radial-gradient(circle, rgba(255, 255, 100, 0.8) 0%, rgba(137, 121, 66, 0) 70%);
+    background: radial-gradient(circle, rgba(255, 255, 83, 0.8) 0%, rgba(255, 200, 0, 0) 70%);
     border-radius: 50%;
     z-index: 15;
     pointer-events: none;
     opacity: 0;
-    transition: opacity 2s;
+    transition: opacity 0.5s;
+}
+
+@keyframes glow-pulse {
+    0% { transform: scale(0.8); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(0.8); }
+}
+
+.hint-glow.visible {
+    opacity: 1;
     animation: glow-pulse 1s infinite alternate;
 }
 
 /* ======================================= */
-/* 7. Estilos de Botones y Tarjetas */
+/* ESTILOS DE TARJETA (incluye el botón inicial) */
 /* ======================================= */
 
-.action-button {
-    position: absolute;
+/* Estilos base compartidos por el botón de acción y las tarjetas */
+.mini-card, .expanded-card, #actionButton {
+    background-color: #ffc0cb; /* Un rosa claro para diferenciar del fondo */
+    color: black;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    font-family: 'Gloria Hallelujah', cursive;
+    z-index: 100;
+    position: fixed;
+    transition: all 0.5s ease-in-out;
+    padding: 15px;
+}
+
+/* Estilo para el botón de acción inicial y la mini tarjeta (misma apariencia) */
+.mini-card, #actionButton {
+    width: 150px;
+    bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 120px; /* Posición visible BAJO el pastel */
-    
-    padding: 10px 20px;
-    background-color: #ff00a2; 
-    color: white;
-    border: none;
-    border-radius: 5px;
     cursor: pointer;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.5s;
-    z-index: 20;
+    font-weight: bold;
+    font-size: 1.1em;
+    opacity: 0; /* Oculto por defecto (controlado por JS para ser visible) */
 }
 
-.action-button.visible {
+/* Clase para hacer visible la mini-card o el actionButton */
+.mini-card.visible, #actionButton.visible {
     opacity: 1;
-    visibility: visible;
+    /* La propiedad 'display: none;' en el HTML debe ser gestionada por JS */
 }
 
-.mini-card {
-    position: fixed;
-    /* Centrado visual para un tamaño pequeño */
-    bottom: 300px;
-    left: 50%;
-    transform: translateX(-50%); 
-
-    width: 92px;
-    height: 30px;
-    background-color: #ff00a2;
-    border-radius: 8px;
-    text-align: center;
-    line-height: 30px;
-    font-family: 'Gloria Hallelujah', sans-serif;
-    color: white;
-    font-size: 0.8em;
-    
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.5s, transform 0.5s;
-    z-index: 1000;
-    cursor: pointer;
-}
-
-.mini-card.visible {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) scale(1.1); /* Llama la atención */
-}
-
-/* ======================================= */
-/* 8. Tarjeta Expandida (Mensaje Largo) */
-/* ======================================= */
+/* Tarjeta Expandida (Mensaje Largo) */
 .expanded-card {
-    position: fixed;
+    width: 90vw;
+    max-width: 450px;
+    height: 80vh;
+    max-height: 600px;
+    padding: 20px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(0.8);
-    
-    /* Dimensiones responsivas */
-    width: 90%;
-    max-width: 450px;
-    max-height: 90vh; /* CRÍTICO: Altura máxima para permitir scroll */
-    
-    /* Estilos visuales basados en tu código */
-    background-color: #fefae0;
-    color: #000000;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-    z-index: 2000; /* Alto z-index para estar sobre todo */
-    
-    /* Espaciado del contenido (ajustado de tu padding excesivo) */
-    padding: 30px; 
+    transform: translate(-50%, -50%);
+    overflow-y: scroll; /* Permite desplazamiento */
+    text-align: left;
     line-height: 1.6;
-
-    /* Oculto por defecto */
     opacity: 0;
-    visibility: hidden;
-    overflow-y: hidden;
-    transition: opacity 0.4s, transform 0.4s, visibility 0.4s;
+    /* Recordatorio: esta tarjeta debe tener style="display: none;" en el HTML */
 }
 
+/* Clase para hacerla visible */
 .expanded-card.visible {
-    opacity: 1; 
-    visibility: visible;
-    transform: translate(-50%, -50%) scale
+    opacity: 1;
+}
 
-
-
-
+.close-btn {
+    position: sticky;
+    top: 0;
+    float: right;
+    font-size: 2em;
+    cursor: pointer;
+    color: #d23763;
+    background: white;
+    padding: 0 5px;
+    border-radius: 50%;
+    line-height: 0.8;
+}
