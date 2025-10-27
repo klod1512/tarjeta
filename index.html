@@ -13,45 +13,48 @@
         /* ======================================= */
         /* ESTILOS DE PÁGINA Y CONTENEDORES */
         /* ======================================= */
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            color: rgb(233, 226, 238);
-            background-color: rgb(81, 26, 81); /* Fondo Morado */
-            overflow: hidden; 
-        }
+       <style>
+    /* ======================================= */
+    /* ESTILOS DE PÁGINA Y CONTENEDORES */
+    /* ======================================= */
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        color: rgb(233, 226, 238);
+        background-color: rgb(81, 26, 81); /* Fondo Morado */
+        overflow: hidden; 
+    }
 
-        /* === CONTENEDOR PRINCIPAL (CORREGIDO PARA MÓVIL) === */
-        .cake-container {
-         
-            display: block;
-            margin: 0 auto;
-            /* Controla el tamaño en diferentes pantallas */
-            width: 95vw;
-            height: 95vh;
-            max-width: 400px;
-            max-height: 850px;
-        }
+    /* === CONTENEDOR PRINCIPAL (CORREGIDO PARA MÓVIL) === */
+    .cake-container {
+        display: block;
+        margin: 0 auto;
+        /* Controla el tamaño en diferentes pantallas */
+        width: 95vw;
+        height: 95vh;
+        max-width: 400px;
+        max-height: 850px;
+    }
 
-        /* === VELAS (Mantenido aquí para que el JS las encuentre) === */
-        .vela-cera {
-            position: absolute;
-            top: 12px; 
-            left: 50%;
-            transform: translateX(-50%);
-            opacity: 0; 
-            transition: top 0.25s ease-out, opacity 0.25s ease-out;
-            z-index: 10; 
-            cursor: pointer; 
-        }
-        .cake-container.mostrar-vela .vela-cera {
-            top: 33%; /* Posición de la vela sobre el pastel */
-            left:50%;
-            opacity: 1;
-        }
+    /* === VELAS (Mantenido aquí para que el JS las encuentre) === */
+    .vela-cera {
+        position: absolute;
+        top: 12px; 
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0; 
+        transition: top 0.25s ease-out, opacity 0.25s ease-out;
+        z-index: 10; 
+        cursor: pointer; 
+    }
+    .cake-container.mostrar-vela .vela-cera {
+        top: 33%; /* Posición de la vela sobre el pastel */
+        left:50%;
+        opacity: 1;
+    }
 
         /* === TEXTO CENTRAL (TITULAR) === */
         .birthday-text {
@@ -568,6 +571,7 @@
     </script>
 </body>
 </html>
+
 
 
 
