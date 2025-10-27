@@ -49,15 +49,23 @@ body {
 /* ======================================= */
 
 /* === VELAS (Posición inicial - OCULTA ARRIBA) === */
+/* --- ESTILOS AGREGADOS PARA DIBUJAR LA VELA --- */
 .vela-cera {
+    /* (Mantiene las propiedades de posición que ya tienes) */
     position: absolute;
-    top: 1%; 
+    top: 1%;
     left: 50%;
     transform: translateX(-50%);
     opacity: 0; 
     transition: top 0.25s ease-out, opacity 0.25s ease-out;
     z-index: 10; 
     cursor: pointer; 
+    
+    /* PROPIEDADES NUEVAS PARA DIBUJAR LA CERA */
+    width: 10px;        /* Ancho de la vela */
+    height: 50px;       /* Altura de la vela */
+    background: #fdf5d5; /* Color de la cera (blanco/crema claro) */
+    border-radius: 2px;
 }
 
 /* === POSICIÓN FINAL DE LA VELA (CAE SOBRE EL PASTEL) === */
@@ -67,6 +75,7 @@ body {
     left:50%;
     opacity: 1;
 }
+
 
 
 
