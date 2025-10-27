@@ -15,13 +15,13 @@ body {
 }
 
 /* === CONTENEDOR PRINCIPAL DEL PASTEL (AJUSTADO PARA MÓVIL) === */
+/* === CONTENEDOR PRINCIPAL DEL PASTEL (AJUSTADO PARA MÓVIL) === */
 .cake-container {
     position: absolute;
     top: 50%;
     left: 50%; 
-    /* 🚨 CAMBIO AQUÍ: Usar un valor MENOS NEGATIVO que -50% mueve el pastel a la derecha. */
-    /* Por ejemplo, -45% lo mueve a la derecha. */
-    transform: translate(-45%, -60%); 
+    /* 🚨 CAMBIO AQUÍ: Mover un poco más a la derecha (menos negativo que -45%) */
+    transform: translate(-40%, -60%); 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -275,6 +275,7 @@ body {
     border-radius: 50%;
     line-height: 0.8;
 }
+
 
 
 
