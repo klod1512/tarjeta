@@ -42,7 +42,7 @@ body {
 .vela-cera {
     position: absolute;
     /* AJUSTE CLAVE: Comienza por encima para que la caída sea visible */
-    top: -50px; 
+    top: -80px; 
     left: 50%;
     transform: translateX(-50%);
     opacity: 0;
@@ -59,6 +59,7 @@ body {
 /* Ajuste la posición final de la vela sobre el pastel */
 .cake-container.mostrar-vela .vela-cera {
     top: 41%; /* Posición final de aterrizaje sobre el pastel */
+
 
 
 
