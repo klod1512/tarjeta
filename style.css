@@ -15,11 +15,16 @@ body {
 }
 
 /* === CONTENEDOR PRINCIPAL DEL PASTEL (AJUSTADO PARA MÓVIL) === */
+/* === CONTENEDOR PRINCIPAL DEL PASTEL (AJUSTADO PARA MÓVIL) === */
 .cake-container {
     position: absolute;
     top: 50%;
-    left: 15%;
-    transform: translate(-55%, -60%); /* Centra el contenedor del pastel */
+    /* 🚨 1. Vuelve a 50% para que el punto de referencia sea el centro de la pantalla */
+    left: 50%; 
+    /* 🚨 2. Ajusta el translateX para moverlo a la izquierda y el translateY para la altura */
+    /* -60% en X lo mueve 10% más a la izquierda de lo normal. */
+    /* Si quieres moverlo más a la izquierda, usa -65%, -70%, etc. */
+    transform: translate(-60%, -60%); 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,8 +34,6 @@ body {
     max-height: 850px;
     background-color: transparent;
 }
-
-/* === SVG del PASTEL === */
 #cake {
     width: 100%;
     height: auto;
@@ -275,6 +278,7 @@ body {
     border-radius: 50%;
     line-height: 0.8;
 }
+
 
 
 
