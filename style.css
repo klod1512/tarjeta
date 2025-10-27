@@ -46,22 +46,223 @@ body {
 /* === VELA (Posición inicial y apariencia) === */
 .vela-cera {
     position: absolute;
-    top: 1%; /* Inicialmente fuera de la pantalla */
-    left: 50%;
+    top:-50%; /* Puedes mantener este valor o ajustarlo si quieres que caiga desde más arriba */
+    left:80%;
     transform: translateX(-50%);
-    opacity: 0; 
+    opacity: 0; /* <<-- CAMBIO CLAVE: Hacerla invisible por defecto */
     transition: top 0.25s ease-out, opacity 0.25s ease-out;
-    z-index: 10; 
-    cursor: pointer; 
-    
-    /* PROPIEDADES PARA DIBUJAR LA CERA */
+
     width: 10px;
-    height: 50px;
-    background: #fdf5d5; /* Color de la cera */
-    border-radius: 2px;
+    height: 60px;
+    background-color: #d23763; /* <-- ¡CORREGIDO! Color de cera */
+    /* ... */
 }
 
-/* === POSICIÓN FINAL DE LA VELA (CAE SOBRE EL PASTEL) === */
+.vela-cera.swaying {
+    /* La animación se aplica después de la caída */
+    animation: candle-sway 3s infinite alternate ease-in-out;
+}
+
+/* --------------------------------------------------------------------- */
+/* Corregir el bloque roto del confeti */
+/* --------------------------------------------------------------------- */
+
+.confetti-container.explode .confetti {
+    /* Eliminada la llave de apertura extra '{' que causaba otro error */
+    animation: confetti-fall 8s forwards ease-out; 
+}
+.fuego-llama-onda {
+    position: absolute;
+    top: -22px;
+    left: -10%;
+    /* transform: translateX(-50%); <--- ¡ELIMINADO! La animación se encargará de la posición */
+    width: 10px;
+    height: 25px;
+    transform-origin: bottom center;
+    /* ... el resto de estilos ... */
+}
+
+/* Y ajusta tus keyframes para que centren la flama */
+@keyframes flame-movement {
+    /* Ajusta los valores para que la traslación inicial sea más centrada */
+    0% {
+        transform: translateX(-50%) rotate(2deg); /* Usamos -50% para centrarla al inicio */
+    }
+    33% {
+        transform: translateX(-60%) rotate(3deg); /* Más movimiento a la izquierda */
+    }
+    66% {
+        transform: translateX(-40%) rotate(-3deg); /* Movimiento a la derecha */
+    }
+    100% {
+        transform: translateX(-50%) rotate(0deg); /* Vuelve a centrarse */
+    }
+}
+
+.llama-onda {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #e1e0de;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    box-shadow:
+        0 0 10px 3px #fac104,
+        0 0 20px 5px #f67a28;
+    z-index: 2;
+}
+
+.fuego-onda {
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    top: -25%;
+    left: -25%;
+    background-color: #ecd90b;
+    border-radius: 50%;
+    filter: blur(2px);
+    opacity: 0.7;
+    z-index: 0;
+}
+
+
+@keyframes flame-movement {
+    0% {
+        transform: translateX(-60%) rotate(2deg);
+    }
+    33% {
+        transform: translateX(-87%) rotate(3deg);
+    }
+    66% {
+        transform: translateX(-70%) rotate(-3deg);
+    }
+    100% {
+        transform: translateX(-60%) rotate(0deg);
+    }
+}
+
+#cake {
+    position: absolute;
+    /* Centrarlo dentro de los 800px x 800px del cake-container, si es necesario */
+    top: 10%; /* Puedes ajustar este valor si el pastel no está en la base del contenedor */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrado total, ajusta el Y para que quede abajo */
+    
+    /* Si quieres que la base del pastel esté pegada al fondo del contenedor: */
+    /* bottom: 0; */
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
+    
+    /* El top: -50px que tenías puede no ser necesario ahora */
+    /* top: -50px; <-- ELIMINAR/AJUSTAR */
+}
+/* ======================================= */
+/* 5. Estilos de Visibilidad/Caída de la Vela */
+/* ======================================= */
+
+/* Corrección: Estilos de Visibilidad/Caída de la Vela */
+.cake-container.mostrar-vela .vela-cera {
+    /* Mantenemos el valor de 600px que parece la posición final correcta */
+    top:-75%; /* Posición final sobre el pastel */ 
+    opacity: 1;
+    visibility: visible; /* Ahora sí hacemos visible el elemento al caer */
+}
+--------------------------------------------------------------------------------
+*/
+
+/* ======================================= */
+/* 6. Estilos del Confeti                  */
+/* ======================================= */
+
+.confetti-container {
+    position: fixed;
+    top: 100%; 
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 500; 
+    opacity: 0;
+}
+
+/* === ANIMACIÓN DE EXPLOSIÓN === */
+.confetti-container.explode {
+    opacity: 1;
+    animation: explode-fade-out 0.10s forwards;
+}
+
+
+.confetti-container.explode:before {
+    content: '';
+    position: absolute;
+    top: 40%;
+    left: 400px; 
+    width: 100%;
+    height: 100%;
+    box-shadow:
+        15px -15px 0 1px #ff00ff, 30px 25px 0 1px #ffc0cb, 
+        25px 0px 0 1px #780762, -25px 0px 0 1px #f8a604,
+        0px 20px 0 1px #ff00ff, 0px -25px 0 1px #780762,
+        30px 10px 0 1px #ffc0cb, -30px 10px 0 1px #f8a604,
+        10px -30px 0 1px #ff00ff, -10px -30px 0 1px #780762;
+    
+    animation: confetti-scatter 0.10s forwards;
+}
+.smoke-puff {
+    position: fixed; 
+
+    width: 20px;
+    height: 20px;
+    background-color: #2a2929; /* Color gris claro */
+    border-radius: 50%; /* Forma redonda */
+    filter: blur(5px); /* Desenfoque para parecer humo */
+    
+    /* Comienza invisible y muy pequeño */
+    opacity: 0; 
+    transform: scale(0); 
+    
+    z-index: 9; 
+    pointer-events: none; /* No debe ser clickeable */
+
+    /* Transición para la animación de 'activa' */
+    transition: 
+        opacity 1.5s ease-out, 
+        transform 1.5s ease-out, 
+        top 6s ease-out; /* Incluimos 'top' para simular que sube */
+}
+
+
+.smoke-puff.active {
+    opacity: 0.8; 
+    transform: scale(2.5); 
+}
+
+.hint-glow {
+    position: fixed; 
+    width: 30px;
+    height: 20px;
+    background: radial-gradient(circle, rgba(255, 255, 100, 0.8) 0%, rgba(137, 121, 66, 0) 70%);
+    border-radius: 50%;
+    z-index: 15; 
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 2s;
+}
+
+
+@keyframes glow-pulse {
+    0% { transform: scale(0.8); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(0.8); }
+}
+
+
+.hint-glow.visible {
+    opacity: 1;
+    animation: glow-pulse 1s infinite alternate;
+}
+/* === ESTILOS PARA EL BOTÓN DE ACCIÓN === */
+/* === ESTILOS PARA EL BOTÓN DE ACCIÓN (CORREGIDO) === */
 .cake-container.mostrar-vela .vela-cera {
     top: 38%; /* Cae encima del pastel */
     left: 50%;
@@ -120,3 +321,4 @@ body {
     0% { transform: translateX(0px) rotate(1deg); }
     100% { transform: translateX(-1px) rotate(-1deg); }
 }
+
