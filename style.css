@@ -68,13 +68,14 @@ body {
     border-radius: 2px;
 }
 
-/* === POSICIÓN FINAL DE LA VELA (CAE SOBRE EL PASTEL) === */
+
 .cake-container.mostrar-vela .vela-cera {
-    /* La vela debe caer en el centro de la parte superior del pastel */
-    top: 40%; 
+    /* AJUSTA ESTE VALOR: 40% o 35% deberían funcionar bien. */
+    top: 38%; /* Usa este valor para que quede justo encima del pastel */
     left:50%;
     opacity: 1;
 }
+
 
 
 
