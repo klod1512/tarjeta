@@ -14,13 +14,18 @@ body {
 }
 
 /* === CONTENEDOR PRINCIPAL DEL PASTEL (CORREGIDO PARA CENTRADO Y POSICIÓN ALTA) === */
+/* EN TU ARCHIVO style.css */
+
 .cake-container {
     position: absolute;
     top: 50%;
     left: 50%;
-    /* AUMENTAMOS el valor negativo para forzarlo a subir MÁS. */
-    /* Este -95% lo subirá casi por completo desde su punto de inicio (50% de la pantalla). */
-    transform: translate(-50%, 60%); 
+    /* ¡CAMBIA ESTE VALOR! Estaba en -95%. 
+       Prueba con -50% o -60% para centrarlo o dejarlo un poco más arriba. */
+    transform: translate(-50%, -60%); /* <-- PRUEBA ESTE NUEVO VALOR */
+    
+    /* ... (resto de estilos) ... */
+}
     
     display: flex;
     justify-content: center;
@@ -66,6 +71,7 @@ body {
     left:50%;
     opacity: 1;
 }
+
 
 
 
