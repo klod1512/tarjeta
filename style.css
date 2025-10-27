@@ -18,7 +18,7 @@ body {
 .cake-container {
     position: absolute;
     top: 50%;
-    left: -75%;
+    left: 155%;
     transform: translate(-50%, -50%); /* Centra el contenedor del pastel */
     display: flex;
     justify-content: center;
@@ -275,6 +275,7 @@ body {
     border-radius: 50%;
     line-height: 0.8;
 }
+
 
 
 
