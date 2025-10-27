@@ -38,27 +38,30 @@ body {
     /* Movemos el SVG (el pastel) 150px hacia ARRIBA dentro de su contenedor. */
     transform: translateY(-150px); 
 }
-/* === VELAS === */
+/* EN TU ARCHIVO style.css */
+
+/* === VELAS (Posición inicial - OCULTA ARRIBA) === */
 .vela-cera {
     position: absolute;
-    /* AJUSTE CLAVE: Comienza por encima para que la caída sea visible */
-    top: -80px; 
+    top: 12px; /* Esta es la posición inicial (muy arriba) */
     left: 50%;
     transform: translateX(-50%);
-    opacity: 0;
-    /* Aumentamos la duración a 0.5s para que la caída sea notoria */
-    transition: top 0.5s ease-out, opacity 0.5s ease-out; 
-    z-index: 10;
-    cursor: pointer;
-    width: 20px;
-    height: 80px;
-    background-color: #fefae9; /* Color de la cera */
-    border-radius: 5px;
+    opacity: 0; 
+    transition: top 0.25s ease-out, opacity 0.25s ease-out;
+    z-index: 10; 
+    cursor: pointer; 
 }
 
-/* Ajuste la posición final de la vela sobre el pastel */
+/* === POSICIÓN FINAL DE LA VELA (¡Ajustar aquí!) === */
 .cake-container.mostrar-vela .vela-cera {
-    top: 41%; /* Posición final de aterrizaje sobre el pastel */
+    /* Actualmente está en 33%. Para que caiga más abajo, 
+       debes AUMENTAR este porcentaje. 
+       Prueba con un valor más alto, como 40%, 45% o incluso 50%.
+    */
+    top: 45%; /* <-- ¡PRUEBA ESTE NUEVO VALOR! */
+    left:50%;
+    opacity: 1;
+}
 
 
 
