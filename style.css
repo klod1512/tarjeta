@@ -20,14 +20,13 @@ body {
     position: absolute; 
     top: 50%; 
     left: 50%;
-    /* Posición Inferior-Izquierda: -95% izquierda, -10% ligeramente arriba */
-    transform: translate(-95%, -10%); 
+    transform: translate(-95%, -10%); /* Pastel abajo-izquierda */
     
     width: 95vw;
     height: 95vh;
     max-width: 400px; 
     max-height: 850px;
-    position: relative; 
+    position: relative; /* Muy importante para posicionar la vela dentro */
 }
 
 /* === SVG DEL PASTEL (AJUSTE INTERNO) === */
@@ -45,17 +44,19 @@ body {
 /* ======================================= */
 
 /* === VELA (Posición inicial y apariencia) === */
+/* === VELA (Posición inicial y apariencia) === */
 .vela-cera {
     position: absolute;
-    top: -50%; /* Posición de inicio (fuera de la pantalla) */
-    left: 50%; /* Centrado sobre el pastel */
+    /* CORRECCIÓN CLAVE: Ajustamos la posición vertical */
+    top: 35%; /* <-- Prueba con este valor (35% o 40%) */
+    left: 50%; 
     transform: translateX(-50%);
-    opacity: 0; 
+    opacity: 1; /* <-- ¡HAZLA VISIBLE DESDE EL PRINCIPIO PARA DEPURAR! */
     transition: top 0.25s ease-out, opacity 0.25s ease-out;
-    z-index: 10; 
+    z-index: 100; /* <-- ¡Aumenta el z-index para asegurar que esté encima del pastel! */
     cursor: pointer; 
     
-    /* Propiedades de la cera */
+    /* Propiedades de la cera (mantienen el tamaño y color) */
     width: 10px;
     height: 60px;
     background-color: #d23763; /* Color de cera */
@@ -64,8 +65,8 @@ body {
 
 /* === POSICIÓN FINAL DE LA VELA (CAE SOBRE EL PASTEL) === */
 .cake-container.mostrar-vela .vela-cera {
-    /* CORRECCIÓN: top: 38% es un valor normal para caer sobre el pastel. */
-    top: 38%; 
+    /* Si top: 35% ya la hace visible, esta regla solo la confirma */
+    top: 35%; 
     left: 50%;
     opacity: 1;
     visibility: visible;
@@ -208,3 +209,4 @@ body {
 
 /* Eliminadas las keyframes flame-movement no usadas en favor de fuego/llama-sway */
 /* Eliminados los bloques de código rotos o duplicados */
+
