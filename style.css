@@ -15,16 +15,30 @@ body {
 }
 
 /* === CONTENEDOR PRINCIPAL DEL PASTEL (AJUSTADO PARA MÓVIL) === */
-/* === CONTENEDOR PRINCIPAL DEL PASTEL (AJUSTADO PARA MÓVIL) === */
-/* === CONTENEDOR PRINCIPAL DEL PASTEL (AJUSTADO PARA MÓVIL) === */
 .cake-container {
     position: absolute;
-    top: 10%;
-    left: -50%; 
-    /* 🚨 CAMBIO CRÍTICO AQUÍ: Usamos un valor POSITIVO para moverlo mucho a la derecha */
-    /* La traslación de +50% en X, cancela el 50% de left, poniendo el pastel 
-       100% a la derecha del centro. Luego, lo ajustamos. */
-    transform: translate(60%, -60%); /* Lo moverá notablemente a la derecha del centro. */
+    /* 1. Mueve el punto de referencia al 50% vertical */
+    top: 50%; 
+    /* 2. Mueve el punto de referencia al 50% horizontal */
+    left: 50%; 
+    /* 3. Usa translate para centrarlo y ajustarlo: */
+    /* El -50% mueve el pastel hacia ARRIBA (Vertical) */
+    /* El -50% mueve el pastel a la IZQUIERDA (Horizontal, para centrarlo perfectamente) */
+    transform: translate(-50%, -50%); /* <-- CENTRADO PERFECTO EN PANTALLA */
+
+    /* AJUSTE PARA MOVERLO MÁS ARRIBA: */
+    /* Si quieres que se vea más arriba, baja el porcentaje del eje Y. */
+    /* Por ejemplo, usa -70% para subirlo más. */
+    /*
+    transform: translate(-50%, -70%); 
+    */
+    
+    /* AJUSTE PARA MOVERLO LIGERAMENTE A LA DERECHA: */
+    /* Si quieres centrarlo y moverlo solo un poco a la derecha: */
+    /*
+    transform: translate(-45%, -50%); 
+    */
+    
     display: flex;
     /* ... (resto del código) ... */
 }
@@ -272,6 +286,7 @@ body {
     border-radius: 50%;
     line-height: 0.8;
 }
+
 
 
 
