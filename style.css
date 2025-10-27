@@ -13,19 +13,14 @@ body {
     font-family: 'Gloria Hallelujah', cursive; 
 }
 
-/* === CONTENEDOR PRINCIPAL DEL PASTEL (CORREGIDO PARA CENTRADO Y POSICIÓN ALTA) === */
-/* EN TU ARCHIVO style.css */
-
+/* === CONTENEDOR PRINCIPAL DEL PASTEL (CENTRADOR Y POSICIÓN AJUSTADA) === */
 .cake-container {
     position: absolute;
     top: 50%;
     left: 50%;
-    /* ¡CAMBIA ESTE VALOR! Estaba en -95%. 
-       Prueba con -50% o -60% para centrarlo o dejarlo un poco más arriba. */
-    transform: translate(-50%, -60%); /* <-- PRUEBA ESTE NUEVO VALOR */
-    
-    /* ... (resto de estilos) ... */
-}
+    /* AJUSTE CLAVE: -50% centra el pastel verticalmente. 
+       Si lo quieres un poco más arriba, usa -60%. */
+    transform: translate(-50%, -50%); /* <-- PASTEL CENTRADO VERTICALMENTE */
     
     display: flex;
     justify-content: center;
@@ -34,59 +29,42 @@ body {
     height: 95vh;
     max-width: 400px; 
     max-height: 850px;
-    position: relative;
+    position: relative; 
 }
 
+/* === SVG DEL PASTEL (AJUSTE INTERNO) === */
 #cake {
     width: 100%;
     height: auto;
     display: block;
-    /* Movemos el SVG (el pastel) 150px hacia ARRIBA dentro de su contenedor. */
-    transform: translateY(-70px); 
+    /* AJUSTE CLAVE: Reducimos el valor negativo para que el SVG no esté muy arriba. */
+    transform: translateY(-80px); /* <-- AJUSTE INTERNO */
 }
-/* EN TU ARCHIVO style.css */
 
-/* === VELAS (Posición inicial - OCULTA ARRIBA) === */
+/* ======================================= */
+/* ESTILOS DE LA VELA */
+/* ======================================= */
+
 /* === VELAS (Posición inicial - OCULTA ARRIBA) === */
 .vela-cera {
-    position: absolute;
-    /* ¡CORREGIR! 480% es demasiado bajo, usa un valor pequeño para esconderla arriba. */
-    top: 1%; /* <-- VALOR CORREGIDO (O 12px) */ 
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0; 
-    transition: top 0.25s ease-out, opacity 0.25s ease-out;
-    z-index: 10; 
-    cursor: pointer; 
+    position: absolute;
+    /* CORRECCIÓN CLAVE: Valor pequeño (1% o 12px) para que empiece fuera de la vista. */
+    top: 1%; /* <-- VELA INICIA MUY ARRIBA */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0; 
+    transition: top 0.25s ease-out, opacity 0.25s ease-out;
+    z-index: 10; 
+    cursor: pointer; 
 }
 
-/* === POSICIÓN FINAL DE LA VELA (¡Ajustar aquí!) === */
-/* EN TU ARCHIVO style.css */
-
-/* === POSICIÓN FINAL DE LA VELA (AJUSTE MÁS ABAJO) === */
-/* === POSICIÓN FINAL DE LA VELA (AJUSTE MÁS ABAJO) === */
+/* === POSICIÓN FINAL DE LA VELA (CAE SOBRE EL PASTEL) === */
 .cake-container.mostrar-vela .vela-cera {
-    /* ¡CORREGIR! 450% es un error. Usa un valor entre 30% y 60% para que caiga sobre el pastel. */
-    top: 45%; /* <--- ¡VALOR CORREGIDO! (Prueba con 40%, 45%, 50%, etc.) */
-    left:50%;
-    opacity: 1;
+    /* AJUSTE CLAVE: Este valor la baja sobre el pastel. 
+       30% (más arriba), 50% (más abajo). Puedes ajustar este valor. */
+    top: 45%; /* <-- VELA CAE MÁS ABAJO SOBRE EL PASTEL */
+    left:50%;
+    opacity: 1;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* Otros estilos de la vela (llama, cera, etc.) si los tienes, deben ir aquí */
