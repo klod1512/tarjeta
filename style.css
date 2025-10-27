@@ -13,14 +13,14 @@ body {
     font-family: 'Gloria Hallelujah', cursive; 
 }
 
-/* === CONTENEDOR PRINCIPAL DEL PASTEL (CENTRADOR Y POSICIÓN AJUSTADA) === */
+/* === CONTENEDOR PRINCIPAL DEL PASTEL (AJUSTADO MÁS ABAJO) === */
 .cake-container {
     position: absolute;
     top: 50%;
     left: 50%;
-    /* AJUSTE CLAVE: -50% centra el pastel verticalmente. 
-       Si lo quieres un poco más arriba, usa -60%. */
-    transform: translate(-50%, -50%); /* <-- PASTEL CENTRADO VERTICALMENTE */
+    /* AJUSTE CLAVE: Cambiamos a -30%. 
+       -50% lo centra, -30% lo baja hacia la parte inferior. */
+    transform: translate(-50%, -30%); /* <-- PASTEL MÁS ABAJO */
     
     display: flex;
     justify-content: center;
@@ -37,8 +37,8 @@ body {
     width: 100%;
     height: auto;
     display: block;
-    /* AJUSTE CLAVE: Reducimos el valor negativo para que el SVG no esté muy arriba. */
-    transform: translateY(-80px); /* <-- AJUSTE INTERNO */
+    /* Mantenemos el ajuste interno: */
+    transform: translateY(-80px); 
 }
 
 /* ======================================= */
@@ -48,8 +48,7 @@ body {
 /* === VELAS (Posición inicial - OCULTA ARRIBA) === */
 .vela-cera {
     position: absolute;
-    /* CORRECCIÓN CLAVE: Valor pequeño (1% o 12px) para que empiece fuera de la vista. */
-    top: 1%; /* <-- VELA INICIA MUY ARRIBA */
+    top: 1%; /* Vela inicia muy arriba */
     left: 50%;
     transform: translateX(-50%);
     opacity: 0; 
@@ -60,11 +59,8 @@ body {
 
 /* === POSICIÓN FINAL DE LA VELA (CAE SOBRE EL PASTEL) === */
 .cake-container.mostrar-vela .vela-cera {
-    /* AJUSTE CLAVE: Este valor la baja sobre el pastel. 
-       30% (más arriba), 50% (más abajo). Puedes ajustar este valor. */
-    top: 45%; /* <-- VELA CAE MÁS ABAJO SOBRE EL PASTEL */
+    /* La vela sigue cayendo sobre el pastel */
+    top: 45%; 
     left:50%;
     opacity: 1;
 }
-
-/* Otros estilos de la vela (llama, cera, etc.) si los tienes, deben ir aquí */
