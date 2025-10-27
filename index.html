@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Feliz Cumpleaños!</title>
+    <link rel="stylesheet" href="style.css"> 
+    
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos básicos para el fondo y el texto principal */
+        body {
+            background-color: #511a51; /* El color morado de tu imagen */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            overflow: hidden; /* Evita barras de desplazamiento innecesarias */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .main-header {
+            color: #fff;
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="main-header">¡Feliz Cumpleaños al <br>mejor novio del mundo! 🤍</h1>
+
+    <div class="cake-container">
+        
+        <div class="vela-cera" id="vela">
+            <div class="fuego-llama-onda">
+                <div class="llama-onda"></div>
+                <div class="fuego-onda"></div>
+            </div>
+        </div>
+
+        <div id="cake">
+            
+        </div>
+
+        <button class="action-button" id="actionButton">¡Sopla!</button>
+
+    </div>
+
+    <div class="mini-card" id="miniCard">
+        Tienes un mensaje
+    </div>
+
+    <div class="expanded-card" id="expandedCard">
+        <p>Mereces todo el amor del mundo por el corazón tan bonito que tienes; lo digo sinceramente, eres tan único que siento que me saqué la lotería contigo. Eres tan honesto, tan directo jajaja, que a veces no sé qué responder. Me sigues poniendo nerviosa, ¡te amo!... (Continúa aquí el resto de tu mensaje).</p>
+        <button id="closeCard" style="margin-top: 20px; padding: 10px 20px; border: none; border-radius: 5px; background-color: #d23763; color: white; cursor: pointer;">Cerrar</button>
+    </div>
+
+    <div class="confetti-container" id="confettiContainer"></div>
+    
+    <script src="script.js"></script> 
+</body>
+</html>

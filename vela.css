@@ -1,0 +1,376 @@
+/* ======================================= */
+/* 0. Centrado del Contenedor Principal    */
+/* ======================================= */
+
+.cake-container {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 800px;
+    height: 800px; /* Suficiente altura para el pastel y el botón */
+}
+
+/* ======================================= */
+/* 1. Estilos de la Vela Completa (Cera)   */
+/* ======================================= */
+/* ======================================= */
+/* 1. Estilos de la Vela Completa (Cera)   */
+/* ======================================= */
+.vela-cera {
+    position: absolute;
+    top:-50%; /* Puedes mantener este valor o ajustarlo si quieres que caiga desde más arriba */
+    left:80%;
+    transform: translateX(-50%);
+    opacity: 0; /* <<-- CAMBIO CLAVE: Hacerla invisible por defecto */
+    transition: top 0.25s ease-out, opacity 0.25s ease-out;
+
+    width: 10px;
+    height: 60px;
+    background-color: #d23763; /* <-- ¡CORREGIDO! Color de cera */
+    /* ... */
+}
+
+.vela-cera.swaying {
+    /* La animación se aplica después de la caída */
+    animation: candle-sway 3s infinite alternate ease-in-out;
+}
+
+/* --------------------------------------------------------------------- */
+/* Corregir el bloque roto del confeti */
+/* --------------------------------------------------------------------- */
+
+.confetti-container.explode .confetti {
+    /* Eliminada la llave de apertura extra '{' que causaba otro error */
+    animation: confetti-fall 8s forwards ease-out; 
+}
+.fuego-llama-onda {
+    position: absolute;
+    top: -22px;
+    left: -10%;
+    /* transform: translateX(-50%); <--- ¡ELIMINADO! La animación se encargará de la posición */
+    width: 10px;
+    height: 25px;
+    transform-origin: bottom center;
+    /* ... el resto de estilos ... */
+}
+
+/* Y ajusta tus keyframes para que centren la flama */
+@keyframes flame-movement {
+    /* Ajusta los valores para que la traslación inicial sea más centrada */
+    0% {
+        transform: translateX(-50%) rotate(2deg); /* Usamos -50% para centrarla al inicio */
+    }
+    33% {
+        transform: translateX(-60%) rotate(3deg); /* Más movimiento a la izquierda */
+    }
+    66% {
+        transform: translateX(-40%) rotate(-3deg); /* Movimiento a la derecha */
+    }
+    100% {
+        transform: translateX(-50%) rotate(0deg); /* Vuelve a centrarse */
+    }
+}
+
+.llama-onda {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #e1e0de;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    box-shadow:
+        0 0 10px 3px #fac104,
+        0 0 20px 5px #f67a28;
+    z-index: 2;
+}
+
+.fuego-onda {
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    top: -25%;
+    left: -25%;
+    background-color: #ecd90b;
+    border-radius: 50%;
+    filter: blur(2px);
+    opacity: 0.7;
+    z-index: 0;
+}
+
+
+@keyframes flame-movement {
+    0% {
+        transform: translateX(-60%) rotate(2deg);
+    }
+    33% {
+        transform: translateX(-87%) rotate(3deg);
+    }
+    66% {
+        transform: translateX(-70%) rotate(-3deg);
+    }
+    100% {
+        transform: translateX(-60%) rotate(0deg);
+    }
+}
+
+#cake {
+    position: absolute;
+    /* Centrarlo dentro de los 800px x 800px del cake-container, si es necesario */
+    top: 10%; /* Puedes ajustar este valor si el pastel no está en la base del contenedor */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrado total, ajusta el Y para que quede abajo */
+    
+    /* Si quieres que la base del pastel esté pegada al fondo del contenedor: */
+    /* bottom: 0; */
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
+    
+    /* El top: -50px que tenías puede no ser necesario ahora */
+    /* top: -50px; <-- ELIMINAR/AJUSTAR */
+}
+/* ======================================= */
+/* 5. Estilos de Visibilidad/Caída de la Vela */
+/* ======================================= */
+
+/* Corrección: Estilos de Visibilidad/Caída de la Vela */
+.cake-container.mostrar-vela .vela-cera {
+    /* Mantenemos el valor de 600px que parece la posición final correcta */
+    top:-75%; /* Posición final sobre el pastel */ 
+    opacity: 1;
+    visibility: visible; /* Ahora sí hacemos visible el elemento al caer */
+}
+--------------------------------------------------------------------------------
+*/
+
+/* ======================================= */
+/* 6. Estilos del Confeti                  */
+/* ======================================= */
+
+.confetti-container {
+    position: fixed;
+    top: 100%; 
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 500; 
+    opacity: 0;
+}
+
+/* === ANIMACIÓN DE EXPLOSIÓN === */
+.confetti-container.explode {
+    opacity: 1;
+    animation: explode-fade-out 0.10s forwards;
+}
+
+
+.confetti-container.explode:before {
+    content: '';
+    position: absolute;
+    top: 40%;
+    left: 400px; 
+    width: 100%;
+    height: 100%;
+    box-shadow:
+        15px -15px 0 1px #ff00ff, 30px 25px 0 1px #ffc0cb, 
+        25px 0px 0 1px #780762, -25px 0px 0 1px #f8a604,
+        0px 20px 0 1px #ff00ff, 0px -25px 0 1px #780762,
+        30px 10px 0 1px #ffc0cb, -30px 10px 0 1px #f8a604,
+        10px -30px 0 1px #ff00ff, -10px -30px 0 1px #780762;
+    
+    animation: confetti-scatter 0.10s forwards;
+}
+.smoke-puff {
+    position: fixed; 
+
+    width: 20px;
+    height: 20px;
+    background-color: #2a2929; /* Color gris claro */
+    border-radius: 50%; /* Forma redonda */
+    filter: blur(5px); /* Desenfoque para parecer humo */
+    
+    /* Comienza invisible y muy pequeño */
+    opacity: 0; 
+    transform: scale(0); 
+    
+    z-index: 9; 
+    pointer-events: none; /* No debe ser clickeable */
+
+    /* Transición para la animación de 'activa' */
+    transition: 
+        opacity 1.5s ease-out, 
+        transform 1.5s ease-out, 
+        top 6s ease-out; /* Incluimos 'top' para simular que sube */
+}
+
+
+.smoke-puff.active {
+    opacity: 0.8; 
+    transform: scale(2.5); 
+}
+
+.hint-glow {
+    position: fixed; 
+    width: 30px;
+    height: 20px;
+    background: radial-gradient(circle, rgba(255, 255, 100, 0.8) 0%, rgba(137, 121, 66, 0) 70%);
+    border-radius: 50%;
+    z-index: 15; 
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 2s;
+}
+
+
+@keyframes glow-pulse {
+    0% { transform: scale(0.8); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(0.8); }
+}
+
+
+.hint-glow.visible {
+    opacity: 1;
+    animation: glow-pulse 1s infinite alternate;
+}
+/* === ESTILOS PARA EL BOTÓN DE ACCIÓN === */
+/* === ESTILOS PARA EL BOTÓN DE ACCIÓN (CORREGIDO) === */
+.action-button {
+    position: absolute;
+    /* Centrarlo horizontalmente bajo el pastel */
+    left: 50%; /* CORREGIDO: Lo mueve al centro del contenedor (400px) */
+    transform: translateX(-50%); /* Corrige el desplazamiento, usando solo -50% para centrar */
+    /* Posición debajo del pastel (ajusta este valor si es necesario) */
+    bottom: 50px; /* CORREGIDO: Distancia lógica desde la parte inferior del contenedor */
+    
+    padding: 10px 20px;
+    /* ... el resto de estilos se mantienen ... */
+}
+
+.action-button.visible {
+    opacity: 1;
+    visibility: visible;
+    /* Asegúrate de que solo tenga el translateX(-50%) para mantener el centrado */
+    transform: translateX(-50%); 
+}
+.expanded-card {
+    position: fixed;
+    top: -80%;
+    left: -70%;
+    transform: translate(-50%, -50%) scale(0.8);
+    width: 80%;
+    max-width: 400px;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 30px; /* Mantén el padding para espacio alrededor del texto */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+    display: flex; /* CAMBIO IMPORTANTE: Usar flexbox */
+    flex-direction: column; /* Apila los elementos verticalmente */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente los elementos hijos */
+    text-align: center; /* Mantiene el texto centrado si hay varias líneas */
+    min-height: 150px; /* Añade una altura mínima para que el centrado vertical sea evidente */
+    opacity: 0;
+    transition: all 0.5s ease-out;
+    color: #511a51;
+}
+
+/* ======================================= */
+/* ESTILOS CORREGIDOS PARA LA TARJETA EXPANDIDA (Con Background de Imagen) */
+/* ======================================= */
+/* ======================================= */
+/* ESTILOS CORREGIDOS PARA LA TARJETA EXPANDIDA (MAX-HEIGHT Y SCROLL) */
+/* ======================================= */
+/* ESTILOS CORREGIDOS PARA LA TARJETA EXPANDIDA (MAX-HEIGHT Y SCROLL) */
+/* ======================================= */
+.expanded-card {
+    position: fixed;
+    
+    /* UBICACIÓN: Centrado en la pantalla */
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8); 
+    
+    /* INVISIBLE Y FUERA DE FLUJO AL INICIO */
+    opacity: 0; 
+    visibility: hidden; /* ¡Asegúrate de que inicie oculto! */
+    
+    /* TAMAÑO Y CONTENIDO */
+    width: 80%; 
+    max-width: 450px; 
+    
+    /* CRÍTICO 1: Definir una altura MÁXIMA para habilitar el scroll */
+    max-height: 90vh; /* Permite que ocupe hasta el 90% de la altura visible */
+    
+    /* Propiedades de fondo y visuales (manteniendo tu imagen) */
+    background-image: url('carta.jpg'); 
+    background-size: cover;          
+    background-repeat: no-repeat;    
+    background-position: center;     
+    background-color: #fefae0; 
+    color: #000000;
+    border-radius: 15px;
+padding: 140px 200px 150px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+    
+    /* Manejo del contenido */
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    
+    /* CRÍTICO: Asegúrate de que no haya scroll por defecto */
+    overflow-y: hidden; 
+    
+    transition: all 0.5s ease-out;
+}
+
+/* ESTADO VISIBLE: Habilitar el Scroll */
+.expanded-card.visible {
+    opacity: 1; 
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1); 
+    
+    /* CRÍTICO: HABILITAR SCROLL SÓLO CUANDO ES VISIBLE */
+    overflow-y: auto; 
+}
+/* ESTADO VISIBLE (CLAVE para la aparición y expansión) */
+.expanded-card.visible {
+    opacity: 1; /* Se hace visible */
+    /* Se expande a su tamaño normal */
+    transform: translate(-50%, -50%) scale(1); 
+}
+
+/* MUY IMPORTANTE: La clase que muestra la tarjeta debe hacer el opacity: 1 */
+.expanded-card.visible {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1); /* Escala a tamaño normal al aparecer */
+}
+
+.mini-card { 
+    position: fixed; 
+    font-family: 'Gloria Hallelujah', sans-serif; 
+    font-size: 1.1em;
+    bottom: 250px;
+    right:745px; 
+
+    width: 92px;
+    height: 30px;
+    background-color: #ff00a2;
+    border-radius: 8px;
+   
+    
+    opacity: 0; 
+    visibility: hidden;
+    transition: opacity 0.5s, transform 0.5s;
+    z-index: 1000;
+}
+
+/* Ajuste del estado visible */
+.mini-card.visible { /* O .action-button.visible */
+    opacity: 1;
+    visibility: visible;
+    /* Si estás usando fixed, el transform es opcional */
+    /* transform: none; o transform: scale(1); */ 
+}
