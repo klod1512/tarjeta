@@ -47,22 +47,19 @@ body {
 /* === VELA (Posición inicial y apariencia) === */
 .vela-cera {
     position: absolute;
-    /* CORRECCIÓN CLAVE: Ajustamos la posición vertical */
-    top: 35%; /* <-- Prueba con este valor (35% o 40%) */
-    left: 50%; 
+    top: 35%; /* O la posición inicial que desees antes de que "caiga" */
+    left: 50%;
     transform: translateX(-50%);
-    opacity: 1; /* <-- ¡HAZLA VISIBLE DESDE EL PRINCIPIO PARA DEPURAR! */
-    transition: top 1s ease-out, opacity 0.25s ease-out;
-    z-index: 100; /* <-- ¡Aumenta el z-index para asegurar que esté encima del pastel! */
-    cursor: pointer; 
-    
-    /* Propiedades de la cera (mantienen el tamaño y color) */
+    opacity: 0; /* ⬅️ Establecer a 0 para que no sea visible */
+    visibility: hidden; /* ⬅️ Asegurar que no ocupe espacio ni sea interactuable */
+    transition: top 0.25s ease-out, opacity 0.25s ease-out, visibility 0s linear 0.25s; /* Ajusta el delay de visibility */
+    z-index: 100;
+    cursor: pointer;
     width: 10px;
     height: 60px;
-    background-color: #d23763; /* Color de cera */
+    background-color: #d23763;
     border-radius: 2px;
 }
-
 /* === POSICIÓN FINAL DE LA VELA (CAE SOBRE EL PASTEL) === */
 /* === POSICIÓN FINAL DE LA VELA (CAE SOBRE EL PASTEL) === */
 .cake-container.mostrar-vela .vela-cera {
@@ -179,6 +176,7 @@ body {
 
 /* Eliminadas las keyframes flame-movement no usadas en favor de fuego/llama-sway */
 /* Eliminados los bloques de código rotos o duplicados */
+
 
 
 
