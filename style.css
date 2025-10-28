@@ -47,7 +47,7 @@ body {
 /* === VELA (Posición inicial y apariencia) === */
 .vela-cera {
     position: absolute;
-    top: 35%; /* O la posición inicial que desees antes de que "caiga" */
+    top: 80%; /* O la posición inicial que desees antes de que "caiga" */
     left: 50%;
     transform: translateX(-50%);
     opacity: 0; /* ⬅️ Establecer a 0 para que no sea visible */
@@ -176,6 +176,7 @@ body {
 
 /* Eliminadas las keyframes flame-movement no usadas en favor de fuego/llama-sway */
 /* Eliminados los bloques de código rotos o duplicados */
+
 
 
 
