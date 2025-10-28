@@ -68,7 +68,7 @@ body {
     opacity: 1; /* ⬅️ Hacerla visible */
     visibility: visible; /* ⬅️ Hacerla visible y interactuable */
     /* 🌟 AJUSTE CLAVE: Retrasa la transición de la vela 🌟 */
-    transition-delay: 2s; /* Ajusta este valor al tiempo deseado (e.g., 2 segundos) */
+    transition-delay: .025s; /* Ajusta este valor al tiempo deseado (e.g., 2 segundos) */
     /* También puedes especificar el delay para cada propiedad si quieres control más fino: */
     /* transition: top 0.25s ease-out 2s, opacity 0.25s ease-out 2s, visibility 0s linear 2s; */
 }
@@ -176,6 +176,7 @@ body {
 
 /* Eliminadas las keyframes flame-movement no usadas en favor de fuego/llama-sway */
 /* Eliminados los bloques de código rotos o duplicados */
+
 
 
 
