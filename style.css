@@ -16,17 +16,15 @@ body {
 /* ======================================= */
 /* AJUSTE DE POSICIÓN DEL PASTEL (Contenedor) */
 /* ======================================= */
+/* ======================================= */
+/* AJUSTE DE POSICIÓN DEL PASTEL (Contenedor) */
+/* ======================================= */
 .cake-container {
-    position: absolute; 
-    top: 50%; 
-    left: 50%;
-    transform: translate(-120%, -5%); /* Pastel abajo-izquierda */
-    
-    width: 95vw;
-    height: 95vh;
-    max-width: 400px; 
-    max-height: 850px;
-    position: relative; /* Muy importante para posicionar la vela dentro */
+    position: absolute; 
+    top: 50%; 
+    left: 50%;
+    transform: translate(-95%, -10%); /* ⬅️ ESTE VALOR (-95%) LO MUEVE HORIZONTALMENTE */
+    /* ... (otras propiedades) ... */
 }
 
 /* === SVG DEL PASTEL (AJUSTE INTERNO) === */
@@ -176,6 +174,7 @@ body {
 
 /* Eliminadas las keyframes flame-movement no usadas en favor de fuego/llama-sway */
 /* Eliminados los bloques de código rotos o duplicados */
+
 
 
 
