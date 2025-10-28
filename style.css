@@ -20,7 +20,7 @@ body {
     position: absolute; 
     top: 80%; 
     left: 50%;
-    transform: translate(-105%, -10%); /* Pastel abajo-izquierda */
+    transform: translate(-145%, -10%); /* Pastel abajo-izquierda */
     
     width: 95vw;
     height: 95vh;
@@ -176,6 +176,7 @@ body {
 
 /* Eliminadas las keyframes flame-movement no usadas en favor de fuego/llama-sway */
 /* Eliminados los bloques de código rotos o duplicados */
+
 
 
 
