@@ -18,9 +18,9 @@ body {
 /* ======================================= */
 .cake-container {
     position: absolute; 
-    top: 200%; 
-    left: 800%;
-    transform: translate(-50%, -50-%); /* Pastel abajo-izquierda */
+    top: 50%; 
+    left: 50%;
+    transform: translate(-120%, -50-%); /* Pastel abajo-izquierda */
     
     width: 95vw;
     height: 95vh;
@@ -176,6 +176,7 @@ body {
 
 /* Eliminadas las keyframes flame-movement no usadas en favor de fuego/llama-sway */
 /* Eliminados los bloques de código rotos o duplicados */
+
 
 
 
