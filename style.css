@@ -25,6 +25,13 @@ body {
     left: 50%;
     transform: translate(-95%, -10%); /* ⬅️ ESTE VALOR (-95%) LO MUEVE HORIZONTALMENTE */
     /* ... (otras propiedades) ... */
+        
+    width: 95vw;
+    height: 95vh;
+    max-width: 400px; 
+    max-height: 850px;
+    position: relative; /* Muy importante para posicionar la vela dentro */
+}
 }
 
 /* === SVG DEL PASTEL (AJUSTE INTERNO) === */
