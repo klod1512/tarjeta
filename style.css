@@ -62,12 +62,12 @@ body {
 
 /* === POSICIÓN FINAL DE LA VELA (CAE SOBRE EL PASTEL) === */
 .cake-container.mostrar-vela .vela-cera {
-    /* ⬇️ REDUCE ESTE VALOR PARA SUBIR LA POSICIÓN FINAL DE LA VELA ⬇️ */
-    top: 80%; /* CAMBIA DE 80% a 65% (o el valor que mejor se ajuste) */
+    top: 80%; /* Posición final de caída */
     left: 50%;
-    opacity: 1;
-    visibility: visible;
-    /* 🌟 AJUSTE CLAVE: Retrasa la transición de la vela 🌟 */
+    opacity: 1; 
+    visibility: visible; 
+    
+    /* AJUSTE DE RETRASO: 0.025s es muy rápido, si quieres que se note el delay, usa 1s o más. */
     transition-delay: .025s; 
 }
 
@@ -172,5 +172,3 @@ body {
     50% { transform: scale(1.2); }
     100% { transform: scale(0.8); }
 }
-
-
