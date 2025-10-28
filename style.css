@@ -74,7 +74,7 @@ body {
 }
 .vela-cera.swaying {
     /* Animación del movimiento de la vela completa */
-    animation: candle-sway 5s infinite alternate ease-in-out;
+    animation: candle-sway .025s infinite alternate ease-in-out;
 }
 
 /* === LLAMA (Contenedor de fuego y llama) === */
@@ -176,6 +176,7 @@ body {
 
 /* Eliminadas las keyframes flame-movement no usadas en favor de fuego/llama-sway */
 /* Eliminados los bloques de código rotos o duplicados */
+
 
 
 
