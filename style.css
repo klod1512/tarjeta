@@ -64,14 +64,17 @@ body {
 }
 
 /* === POSICIÓN FINAL DE LA VELA (CAE SOBRE EL PASTEL) === */
+/* === POSICIÓN FINAL DE LA VELA (CAE SOBRE EL PASTEL) === */
 .cake-container.mostrar-vela .vela-cera {
-    /* Si top: 35% ya la hace visible, esta regla solo la confirma */
-    top: 50%; 
+    top: 80%;
     left: 50%;
-    opacity: 1;
-    visibility: 0;
+    opacity: 1; /* ⬅️ Hacerla visible */
+    visibility: visible; /* ⬅️ Hacerla visible y interactuable */
+    /* 🌟 AJUSTE CLAVE: Retrasa la transición de la vela 🌟 */
+    transition-delay: 2s; /* Ajusta este valor al tiempo deseado (e.g., 2 segundos) */
+    /* También puedes especificar el delay para cada propiedad si quieres control más fino: */
+    /* transition: top 0.25s ease-out 2s, opacity 0.25s ease-out 2s, visibility 0s linear 2s; */
 }
-
 .vela-cera.swaying {
     /* Animación del movimiento de la vela completa */
     animation: candle-sway 5s infinite alternate ease-in-out;
@@ -176,6 +179,7 @@ body {
 
 /* Eliminadas las keyframes flame-movement no usadas en favor de fuego/llama-sway */
 /* Eliminados los bloques de código rotos o duplicados */
+
 
 
 
