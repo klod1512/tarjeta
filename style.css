@@ -2,40 +2,40 @@
 /* ESTILOS BASE */
 /* ======================================= */
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    color: rgb(233, 226, 238);
-    background-color: rgb(81, 26, 81); /* Fondo Morado */
-    overflow: hidden;
-    font-family: 'Gloria Hallelujah', cursive; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: rgb(233, 226, 238);
+    background-color: rgb(81, 26, 81); /* Fondo Morado */
+    overflow: hidden;
+    font-family: 'Gloria Hallelujah', cursive; 
 }
 
 /* ======================================= */
 /* AJUSTE DE POSICIÓN DEL PASTEL (Contenedor) */
 /* ======================================= */
 .cake-container {
-    position: absolute; 
-    top: 50%; 
-    left: 50%;
-    /* Usualmente se usa -50% para centrar, pero lo dejamos como está */
-    transform: translate(-95%, -10%); 
-        
-    width: 95vw;
-    height: 95vh;
-    max-width: 400px; 
-    max-height: 850px;
-    position: relative; /* Muy importante para posicionar la vela dentro */
+    position: absolute; 
+    top: 50%; 
+    left: 50%;
+    /* Usualmente se usa -50% para centrar, pero lo dejamos como está */
+    transform: translate(-95%, -10%); 
+        
+    width: 95vw;
+    height: 95vh;
+    max-width: 400px; 
+    max-height: 850px;
+    position: relative; /* Muy importante para posicionar la vela dentro */
 }
 
 /* === SVG DEL PASTEL (AJUSTE INTERNO) === */
 #cake {
-    width: 100%;
-    height: auto;
-    display: block;
-    transform: translateY(-80px); 
+    width: 100%;
+    height: auto;
+    display: block;
+    transform: translateY(-80px); 
 }
 
 /* ======================================= */
@@ -44,84 +44,84 @@ body {
 
 /* === VELA (Posición inicial y apariencia) === */
 .vela-cera {
-    position: absolute;
-    /* SUGERENCIA: Puedes usar top: -100px para que empiece fuera de la pantalla por arriba */
-    top: 200%; 
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0; 
-    visibility: hidden; 
-    transition: top 0.25s ease-out, opacity 0.25s ease-out, visibility 0s linear 0.25s; 
-    z-index: 100;
-    cursor: pointer;
-    width: 10px;
-    height: 60px;
-    background-color: #d23763;
-    border-radius: 2px;
+    position: absolute;
+    /* SUGERENCIA: Puedes usar top: -100px para que empiece fuera de la pantalla por arriba */
+    top: 200%; 
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0; 
+    visibility: hidden; 
+    transition: top 0.25s ease-out, opacity 0.25s ease-out, visibility 0s linear 0.25s; 
+    z-index: 100;
+    cursor: pointer;
+    width: 10px;
+    height: 60px;
+    background-color: #d23763;
+    border-radius: 2px;
 }
 
 /* === POSICIÓN FINAL DE LA VELA (CAE SOBRE EL PASTEL) === */
 .cake-container.mostrar-vela .vela-cera {
-    top: 80%; /* Posición final de caída */
-    left: 50%;
-    opacity: 1; 
-    visibility: visible; 
-    
-    /* AJUSTE DE RETRASO: 0.025s es muy rápido, si quieres que se note el delay, usa 1s o más. */
-    transition-delay: .025s; 
+    top: 80%; /* Posición final de caída */
+    left: 50%;
+    opacity: 1; 
+    visibility: visible; 
+    
+    /* AJUSTE DE RETRASO: 0.025s es muy rápido, si quieres que se note el delay, usa 1s o más. */
+    transition-delay: .025s; 
 }
 
 .vela-cera.swaying {
-    /* CORRECCIÓN: 0.025s es muy rápido. Se recomienda 2s o 3s para un movimiento suave. */
-    animation: candle-sway 3s infinite alternate ease-in-out;
+    /* CORRECCIÓN: 0.025s es muy rápido. Se recomienda 2s o 3s para un movimiento suave. */
+    animation: candle-sway 3s infinite alternate ease-in-out;
 }
 /* *** DEBES AGREGAR LA KEYFRAME PARA 'candle-sway' YA QUE NO ESTÁ EN TU CÓDIGO *** */
 
 /* === LLAMA (Contenedor de fuego y llama) === */
 .fuego-llama-onda {
-    position: absolute;
-    width: 15px; 
-    height: 35px;
-    top: -30px; 
-    left: 50%; 
-    transform: translateX(-50%); 
-    transform-origin: bottom center;
+    position: absolute;
+    width: 15px; 
+    height: 35px;
+    top: -30px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    transform-origin: bottom center;
 }
 
 .fuego-onda {
-    position: absolute;
-    width: 15px; 
-    height: 35px;
-    background-color: orange;
-    border-radius: 50%; 
-    filter: blur(5px);
-    opacity: 0.8;
-    z-index: 11;
-    animation: fuego-sway 0.5s infinite alternate;
+    position: absolute;
+    width: 15px; 
+    height: 35px;
+    background-color: orange;
+    border-radius: 50%; 
+    filter: blur(5px);
+    opacity: 0.8;
+    z-index: 11;
+    animation: fuego-sway 0.5s infinite alternate;
 }
 
 .llama-onda {
-    position: absolute;
-    width: 10px; 
-    height: 25px; 
-    background-color: yellow;
-    border-radius: 50%;
-    filter: blur(3px); 
-    opacity: 0.9;
-    top: 5px; 
-    left: 2.5px;
-    z-index: 12;
-    animation: llama-sway 0.5s infinite alternate;
+    position: absolute;
+    width: 10px; 
+    height: 25px; 
+    background-color: yellow;
+    border-radius: 50%;
+    filter: blur(3px); 
+    opacity: 0.9;
+    top: 5px; 
+    left: 2.5px;
+    z-index: 12;
+    animation: llama-sway 0.5s infinite alternate;
 }
 
 /* === Animaciones de movimiento suave para la llama === */
 @keyframes fuego-sway {
-    0% { transform: translateX(0px); }
-    100% { transform: translateX(1px); }
+    0% { transform: translateX(0px); }
+    100% { transform: translateX(1px); }
 }
 @keyframes llama-sway {
-    0% { transform: translateX(0px) rotate(1deg); }
-    100% { transform: translateX(-1px) rotate(-1deg); }
+    0% { transform: translateX(0px) rotate(1deg); }
+    100% { transform: translateX(-1px) rotate(-1deg); }
 }
 
 /* ======================================= */
@@ -129,46 +129,46 @@ body {
 /* ======================================= */
 
 .smoke-puff {
-    position: fixed; 
-    width: 20px;
-    height: 20px;
-    background-color: #2a2929;
-    border-radius: 50%;
-    filter: blur(5px);
-    opacity: 0; 
-    transform: scale(0); 
-    z-index: 9; 
-    pointer-events: none;
-    transition: 
-        opacity 1.5s ease-out, 
-        transform 1.5s ease-out, 
-        top 6s ease-out; 
+    position: fixed; 
+    width: 20px;
+    height: 20px;
+    background-color: #2a2929;
+    border-radius: 50%;
+    filter: blur(5px);
+    opacity: 0; 
+    transform: scale(0); 
+    z-index: 9; 
+    pointer-events: none;
+    transition: 
+        opacity 1.5s ease-out, 
+        transform 1.5s ease-out, 
+        top 6s ease-out; 
 }
 
 .smoke-puff.active {
-    opacity: 0.8; 
-    transform: scale(2.5); 
+    opacity: 0.8; 
+    transform: scale(2.5); 
 }
 
 .hint-glow {
-    position: fixed; 
-    width: 30px;
-    height: 20px;
-    background: radial-gradient(circle, rgba(255, 255, 100, 0.8) 0%, rgba(137, 121, 66, 0) 70%);
-    border-radius: 50%;
-    z-index: 15; 
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 2s;
+    position: fixed; 
+    width: 30px;
+    height: 20px;
+    background: radial-gradient(circle, rgba(255, 255, 100, 0.8) 0%, rgba(137, 121, 66, 0) 70%);
+    border-radius: 50%;
+    z-index: 15; 
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 2s;
 }
 
 .hint-glow.visible {
-    opacity: 1;
-    animation: glow-pulse 1s infinite alternate;
+    opacity: 1;
+    animation: glow-pulse 1s infinite alternate;
 }
 
 @keyframes glow-pulse {
-    0% { transform: scale(0.8); }
-    50% { transform: scale(1.2); }
-    100% { transform: scale(0.8); }
+    0% { transform: scale(0.8); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(0.8); }
 }
