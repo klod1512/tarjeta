@@ -40,37 +40,21 @@ body {
 /* ======================================= */
 /* AJUSTES DE VELA Y LLAMA */
 /* ======================================= */
-/* ======================================= */
-/* AJUSTES DE VELA Y LLAMA */
-/* ======================================= */
 
 /* === VELA (Posición inicial y apariencia) === */
 .vela-cera {
     position: absolute;
-    /* 🟢 Correcto: Posición inicial fuera de vista */
+    /* 🟢 CORRECCIÓN: Colocarla muy arriba para que el movimiento sea visible */
     top: -80%; 
     
-    /* 🟢 Correcto: Debe comenzar en el centro (50%) para caer en el centro */
+    /* 🟢 CORRECCIÓN: Debe comenzar en el centro (50%) para caer en el centro */
     left: 50%;
     
     transform: translateX(-50%);
     opacity: 0; 
     visibility: hidden; 
-    
-    /* 🚀 LA LÍNEA CRUCIAL FALTANTE: Define el tiempo y tipo de movimiento */
-    transition: 
-        top 0.5s ease-in, /* La caída durará 0.5s y acelerará */
-        left 0.5s ease-out, /* Si en algún momento cambias la posición horizontal, también se animará */
-        opacity 0.5s ease-out; /* La vela aparecerá en 0.5s */
-        
-    z-index: 100;
-    cursor: pointer;
-    width: 10px;
-    height: 60px;
-    background-color: #d23763;
-    border-radius: 2px;
+    /* ... el resto de estilos ... */
 }
-
 
 
 /* === POSICIÓN FINAL DE LA VELA (CAE SOBRE EL PASTEL) === */
@@ -335,3 +319,7 @@ body {
             <path fill="#794330" d="M173.667-13.94c-49.298,0-102.782,0-147.334,0c-3.999,0-4-16.002,0-16.002
              c44.697,0,96.586,0,147.334,0C177.667-29.942,177.668-13.94,173.667-13.94z">
                 <animate id="bizcocho_3" attributeName="d" calcMode="spline" keySplines="
+
+
+
+
