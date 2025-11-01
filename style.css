@@ -71,7 +71,7 @@ body {
 .cake-container.mostrar-vela .vela-cera {
     /* Posición final sobre el glaseado del pastel */
     left: 50%; 
-    top: 25%; 
+    top: 65%; 
     
     opacity: 1; 
     visibility: visible; 
