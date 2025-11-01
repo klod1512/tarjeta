@@ -487,12 +487,19 @@
                 
                 
                 // ACTIVAR CONFETI
-                const candleRect = candle.getBoundingClientRect();
-                const explosionConfettiX = candleRect.left + (candleRect.width / 2);
-                const explosionConfettiY = candleRect.top; 
+            // ... dentro del listener de click de la vela ...
 
-                for (let i = 0; i < 500; i++) {
-                    const confetti = document.createElement('div');
+// ACTIVAR CONFETI
+const candleRect = candle.getBoundingClientRect();
+const explosionConfettiX = candleRect.left + (candleRect.width / 2); // X de la explosión (centro)
+const explosionConfettiY = candleRect.top; // Y de la explosión (parte superior de la vela)
+
+for (let i = 0; i < 500; i++) {
+    const confetti = document.createElement('div');
+    // ...
+    
+    // ... aquí se usa initialX e initialY, que usan las coordenadas de arriba ...
+}
                     confetti.classList.add('confetti');
                     
                     const initialX = (Math.random() * 40) - 20 + explosionConfettiX;
@@ -540,6 +547,7 @@
     </script>
 </body>
 </html>
+
 
 
 
