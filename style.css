@@ -12,16 +12,19 @@ body {
     overflow: hidden;
     font-family: 'Gloria Hallelujah', cursive; 
 }
-
 .cake-container {
     position: absolute; 
-    top: 50%; 
- 
-    transform: translate(300%, -10%); /* Movido a la izquierda */
-        
+    top: 50%; 
+    
+    /* 🔑 AÑADIR: Esto lo centra HORIZONTALMENTE para que el transform funcione */
+    left: 50%;
+    
+    /* Mueve 300% de su ancho y -10% de su alto */
+    transform: translate(300%, -10%); 
+        
     width: 95vw;
     height: 95vh;
-    max-width: 400px; 
+    max-width: 400px; 
     max-height: 850px;
 }
 
@@ -172,6 +175,7 @@ body {
     50% { transform: scale(1.2); }
     100% { transform: scale(0.8); }
 }
+
 
 
 
