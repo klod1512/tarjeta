@@ -44,8 +44,8 @@ body {
 /* === VELA (Posición inicial y apariencia) === */
 .vela-cera {
     position: absolute;
-    top: 60%; /* 💡 CAMBIO CRUCIAL: La vela empieza arriba del pastel */
-    left: 90%;
+    top: -80%; /* 💡 CAMBIO CRUCIAL: La vela empieza arriba del pastel */
+    left: 50%;
     transform: translateX(-50%);
     opacity: 0; 
     visibility: hidden; 
@@ -60,8 +60,8 @@ body {
 
 /* === POSICIÓN FINAL DE LA VELA (CAE SOBRE EL PASTEL) === */
 .cake-container.mostrar-vela .vela-cera {
-    top:55%; 
-    left: 25%;
+    top:60%; 
+    left: 90%;
     opacity: 1; 
     visibility: visible; 
     transition-delay: .05s; 
@@ -315,6 +315,3 @@ body {
             <path fill="#794330" d="M173.667-13.94c-49.298,0-102.782,0-147.334,0c-3.999,0-4-16.002,0-16.002
              c44.697,0,96.586,0,147.334,0C177.667-29.942,177.668-13.94,173.667-13.94z">
                 <animate id="bizcocho_3" attributeName="d" calcMode="spline" keySplines="
-
-
-
