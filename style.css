@@ -59,12 +59,17 @@ body {
 
 /* === POSICIÓN FINAL DE LA VELA (CAE SOBRE EL PASTEL) === */
 .cake-container.mostrar-vela .vela-cera {
-    top:25%; 
-    left: 50%;
+    /* 🟢 CORRECCIÓN: Centrar horizontalmente sobre el pastel */
+    left: 50%; 
+    
+    /* 🟢 AJUSTE: La posición final sobre el pastel (25% es una buena estimación) */
+    top: 25%; 
+    
     opacity: 1; 
     visibility: visible; 
     transition-delay: .05s; 
 }
+
 
 
 .vela-cera.swaying {
