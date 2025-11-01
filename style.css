@@ -19,7 +19,7 @@ body {
     
     /* 1. POSICIÓN HORIZONTAL: Mueve el 100% de su ancho a la izquierda. */
     /* 2. POSICIÓN VERTICAL: Mueve el 90% de su altura hacia arriba. (¡MÁS ALTO!) */
-    transform: translate(-120%, -20%); 
+    transform: translate(-80%, -20%); 
         
     width: 90vw; 
     height: 95vh;
@@ -258,6 +258,7 @@ body {
     line-height: 1.2;
     margin: 0;
 }
+
 
 
 
