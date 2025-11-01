@@ -18,7 +18,6 @@ body {
     left: 50%;
     /* ✅ Nuevo valor: Centrado horizontal (-50%) y subido un 40% más del centro (-90%) */
     transform: translate(-50%, -90%); 
-    z-index: 99;
 }
 #cake {
     width: 100%;
@@ -254,6 +253,7 @@ body {
     line-height: 1.2;
     margin: 0;
 }
+
 
 
 
