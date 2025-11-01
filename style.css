@@ -44,19 +44,18 @@ body {
 /* === VELA (Posición inicial y apariencia) === */
 .vela-cera {
     position: absolute;
-    top: 60%; /* 💡 CAMBIO CRUCIAL: La vela empieza arriba del pastel */
-    left: 90%;
+    /* 🟢 CORRECCIÓN: Colocarla muy arriba para que el movimiento sea visible */
+    top: -80%; 
+    
+    /* 🟢 CORRECCIÓN: Debe comenzar en el centro (50%) para caer en el centro */
+    left: 50%;
+    
     transform: translateX(-50%);
     opacity: 0; 
     visibility: hidden; 
-    transition: top 0.25s ease-out, opacity 0.25s ease-out, visibility 0s linear 0.25s; 
-    z-index: 100;
-    cursor: pointer;
-    width: 10px;
-    height: 60px;
-    background-color: #d23763;
-    border-radius: 2px;
+    /* ... el resto de estilos ... */
 }
+
 
 /* === POSICIÓN FINAL DE LA VELA (CAE SOBRE EL PASTEL) === */
 .cake-container.mostrar-vela .vela-cera {
