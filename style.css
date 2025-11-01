@@ -12,22 +12,19 @@ body {
     overflow: hidden;
     font-family: 'Gloria Hallelujah', cursive; 
 }
-
 .cake-container {
     position: absolute; 
-    top: 600px; 
-    left: 50%;
+    top: 50%; /* Punto de origen vertical: la mitad de la pantalla */
+    left: 50%; /* Punto de origen horizontal: el centro de la pantalla */
     
-    /* 🟢 Ajuste 1: Lo movemos -100% (exactamente su propio ancho) a la izquierda. */
-    transform: translate(-100%, -10%); 
+    /* Mueve -100% horizontalmente (a la izquierda) y -50% verticalmente (hacia arriba) */
+    transform: translate(-100%, -50%); 
         
     width: 95vw;
     height: 95vh;
-    /* 🟢 Ajuste 2: Reducir el tamaño máximo para que no desborde en pantallas pequeñas. */
-    max-width: 550px; 
-    max-height: 850px;
+    max-width: 350px; /* Tamaño máximo recomendado para visibilidad */ 
+    max-height: 750px;
 }
-
 /* === SVG DEL PASTEL (AJUSTE INTERNO) === */
 #cake {
     width: 100%;
@@ -258,6 +255,7 @@ body {
     line-height: 1.2;
     margin: 0;
 }
+
 
 
 
