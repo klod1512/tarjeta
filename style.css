@@ -195,7 +195,7 @@ body {
     width: 150px;
     padding: 15px;
     /* 🔑 CAMBIO: Aumenta el valor 'bottom' para subir el botón */
-    bottom: 500px; 
+    bottom:300px; 
     left: 50%;
     transform: translateX(-50%);
     cursor: pointer;
@@ -260,6 +260,7 @@ body {
     line-height: 1.2;
     margin: 0;
 }
+
 
 
 
