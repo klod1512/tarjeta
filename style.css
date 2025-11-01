@@ -31,20 +31,35 @@ body {
 /* ======================================= */
 
 /* === VELA (Posición inicial y apariencia) === */
+/* ======================================= */
+/* AJUSTES DE VELA Y LLAMA */
+/* ======================================= */
+
+/* === VELA (Posición inicial y apariencia) === */
 .vela-cera {
-    position: absolute;
-    top: 50%; 
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0; 
-    visibility: hidden; 
-    transition: top 0.25s ease-out, opacity 0.25s ease-out, visibility 0s linear 0.25s; 
-    z-index: 100;
-    cursor: pointer;
-    width: 10px;
-    height: 60px;
-    background-color: #d23763;
-    border-radius: 2px;
+    position: absolute;
+    top: -50%; /* 💡 CAMBIO CRUCIAL: La vela empieza arriba del pastel */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0; 
+    visibility: hidden; 
+    transition: top 0.25s ease-out, opacity 0.25s ease-out, visibility 0s linear 0.25s; 
+    z-index: 100;
+    cursor: pointer;
+    width: 10px;
+    height: 60px;
+    background-color: #d23763;
+    border-radius: 2px;
+}
+
+/* === POSICIÓN FINAL DE LA VELA (CAE SOBRE EL PASTEL) === */
+/* Este valor ya está bien (45% es correcto) */
+.cake-container.mostrar-vela .vela-cera {
+    top: 45%; 
+    left: 50%;
+    opacity: 1; 
+    visibility: visible; 
+    transition-delay: .05s; 
 }
 
 /* === POSICIÓN FINAL DE LA VELA (CAE SOBRE EL PASTEL) === */
@@ -253,6 +268,7 @@ body {
     line-height: 1.2;
     margin: 0;
 }
+
 
 
 
