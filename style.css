@@ -13,26 +13,12 @@ body {
     font-family: 'Gloria Hallelujah', cursive; 
 }
 
-/* ======================================= */
-/* AJUSTE DE POSICIÓN DEL PASTEL (Contenedor) */
-/* ======================================= */
-/* ======================================= */
-/* AJUSTE DE POSICIÓN DEL PASTEL (Contenedor) */
-/* ======================================= */
-.cake-container {
-/* ======================================= */
-/* AJUSTE DE POSICIÓN DEL PASTEL (Contenedor) */
-/* ======================================= */
-/* AJUSTE DE POSICIÓN DEL PASTEL (Contenedor) */
-/* ======================================= */
 .cake-container {
     position: absolute; 
     top: 50%; 
     left: 50%;
-    
-    /* CAMBIO CLAVE: Cambiamos -50% (centro) por -70% para moverlo a la izquierda. */
-    /* Cuanto más negativo sea el primer valor, más a la izquierda se moverá. */
-    transform: translate(-70%, -50%); 
+ 
+    transform: translate(-70%, -50%); /* Movido a la izquierda */
         
     width: 95vw;
     height: 95vh;
@@ -86,7 +72,12 @@ body {
     /* CORRECCIÓN: 0.025s es muy rápido. Se recomienda 2s o 3s para un movimiento suave. */
     animation: candle-sway 3s infinite alternate ease-in-out;
 }
-/* *** DEBES AGREGAR LA KEYFRAME PARA 'candle-sway' YA QUE NO ESTÁ EN TU CÓDIGO *** */
+
+/* 🟢 NUEVA KEYFRAME PARA EL BALANCEO DE LA VELA (candle-sway) */
+@keyframes candle-sway {
+    0% { transform: translateX(-50%) rotate(-1.5deg); }
+    100% { transform: translateX(-50%) rotate(1.5deg); }
+}
 
 /* === LLAMA (Contenedor de fuego y llama) === */
 .fuego-llama-onda {
@@ -183,10 +174,3 @@ body {
     50% { transform: scale(1.2); }
     100% { transform: scale(0.8); }
 }
-
-
-
-
-
-
-
