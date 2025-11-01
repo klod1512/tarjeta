@@ -488,29 +488,27 @@ const candleRect = candle.getBoundingClientRect();
 const explosionConfettiX = candleRect.left + (candleRect.width / 2); // X de la explosión (centro)
 const explosionConfettiY = candleRect.top; // Y de la explosión (parte superior de la vela)
 
+// 🐛 CORRECCIÓN: El bucle debe contener toda la lógica de creación del elemento
 for (let i = 0; i < 500; i++) {
     const confetti = document.createElement('div');
-    // ...
-    
-    // ... aquí se usa initialX e initialY, que usan las coordenadas de arriba ...
-}
-                    confetti.classList.add('confetti');
-                    
-                    const initialX = (Math.random() * 40) - 20 + explosionConfettiX;
-                    const initialY = (Math.random() * 40) - 20 + explosionConfettiY;
-                    
-                    confetti.style.position = 'fixed'; 
-                    confetti.style.left = `${initialX}px`;
-                    confetti.style.top = `${initialY}px`; 
 
-                    confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`; 
-                    confetti.style.setProperty('--x', `${(Math.random() - 0.5) * 4000}px`);
-                    confetti.style.setProperty('--y', `${Math.random() * 2000 + 500}px`); 
-                    confetti.style.setProperty('--rot', `${Math.random() * 1000}deg`); 
+    confetti.classList.add('confetti');
 
-                    confettiContainer.appendChild(confetti);
-                }
-                confettiContainer.classList.add('explode');
+    const initialX = (Math.random() * 40) - 20 + explosionConfettiX;
+    const initialY = (Math.random() * 40) - 20 + explosionConfettiY;
+
+    confetti.style.position = 'fixed';
+    confetti.style.left = `${initialX}px`;
+    confetti.style.top = `${initialY}px`;
+
+    confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`;
+    confetti.style.setProperty('--x', `${(Math.random() - 0.5) * 4000}px`);
+    confetti.style.setProperty('--y', `${Math.random() * 2000 + 500}px`);
+    confetti.style.setProperty('--rot', `${Math.random() * 1000}deg`);
+
+    confettiContainer.appendChild(confetti);
+} // <--- El bucle cierra aquí, correctamente.
+confettiContainer.classList.add('explode');
                 
                 // Muestra el mensaje de Feliz Cumpleaños
                 birthdayText.innerHTML = "<h1>¡Feliz Cumpleaños al mejor novio del mundo!❤ </h1>";
@@ -541,6 +539,7 @@ for (let i = 0; i < 500; i++) {
     </script>
 </body>
 </html>
+
 
 
 
