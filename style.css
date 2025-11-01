@@ -15,7 +15,7 @@ body {
 
 .cake-container {
     position: absolute; 
-    top: 60%; 
+    top: 600px; 
     left: 50%;
     
     /* 🟢 Ajuste 1: Lo movemos -100% (exactamente su propio ancho) a la izquierda. */
@@ -258,6 +258,7 @@ body {
     line-height: 1.2;
     margin: 0;
 }
+
 
 
 
