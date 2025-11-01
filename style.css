@@ -18,7 +18,7 @@ body {
     top: 50%; 
     left: 50%;
  
-    transform: translate(-300%, -150%); /* Movido a la izquierda */
+    transform: translate(-100%, -120%); /* Movido a la izquierda */
         
     width: 95vw;
     height: 95vh;
@@ -174,5 +174,6 @@ body {
     50% { transform: scale(1.2); }
     100% { transform: scale(0.8); }
 }
+
 
 
