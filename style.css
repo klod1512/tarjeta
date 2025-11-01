@@ -13,20 +13,12 @@ body {
     font-family: 'Gloria Hallelujah', cursive; 
 }
 .cake-container {
-    position: absolute; 
-    top: 50%; /* Punto de referencia vertical: el centro de la pantalla */
-    left: 50%; /* Punto de referencia horizontal: el centro de la pantalla */
-    
-    /* 1. POSICIÓN HORIZONTAL: Mueve el 100% de su ancho a la izquierda. */
-    /* 2. POSICIÓN VERTICAL: Mueve el 90% de su altura hacia arriba. (¡MÁS ALTO!) */
-    transform: translate(-80%, -5%); 
-        
-    width: 90vw; 
-    height: 95vh;
-    
-    /* 3. DIMENSIONES MÁXIMAS: Mantenemos los límites para móviles */
-    max-width: 320px; 
-    max-height: 600px; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* Ajuste para que el pastel esté más arriba en la pantalla */
+    transform: translate(-50%, -70%); 
+    z-index: 99;
 }
 /* === SVG DEL PASTEL (AJUSTE INTERNO) === */
 #cake {
@@ -260,6 +252,7 @@ body {
     line-height: 1.2;
     margin: 0;
 }
+
 
 
 
