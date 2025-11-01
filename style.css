@@ -23,12 +23,16 @@ body {
 /* ======================================= */
 /* AJUSTE DE POSICIÓN DEL PASTEL (Contenedor) */
 /* ======================================= */
+/* AJUSTE DE POSICIÓN DEL PASTEL (Contenedor) */
+/* ======================================= */
 .cake-container {
     position: absolute; 
     top: 50%; 
-    left: 90%;
-    /* 🥳 Esta es la línea que centra el elemento */
-    transform: translate(-90%, -5%); 
+    left: 50%;
+    
+    /* CAMBIO CLAVE: Cambiamos -50% (centro) por -70% para moverlo a la izquierda. */
+    /* Cuanto más negativo sea el primer valor, más a la izquierda se moverá. */
+    transform: translate(-70%, -50%); 
         
     width: 95vw;
     height: 95vh;
@@ -179,6 +183,7 @@ body {
     50% { transform: scale(1.2); }
     100% { transform: scale(0.8); }
 }
+
 
 
 
