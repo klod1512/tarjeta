@@ -20,17 +20,22 @@ body {
 /* AJUSTE DE POSICIÓN DEL PASTEL (Contenedor) */
 /* ======================================= */
 .cake-container {
+/* ======================================= */
+/* AJUSTE DE POSICIÓN DEL PASTEL (Contenedor) */
+/* ======================================= */
+.cake-container {
     position: absolute; 
     top: 50%; 
     left: 50%;
-    /* ❌ CAMBIO CLAVE: Usa -50%, -50% para centrarlo. */
-    transform: translate(-50%, -50%); /* <-- ¡Asegúrate de cambiar esto! */
+    /* 🥳 Esta es la línea que centra el elemento */
+    transform: translate(-50%, -50%); 
         
     width: 95vw;
     height: 95vh;
     max-width: 400px; 
     max-height: 850px;
     position: relative; 
+}
 }
 /* === SVG DEL PASTEL (AJUSTE INTERNO) === */
 #cake {
@@ -174,4 +179,5 @@ body {
     50% { transform: scale(1.2); }
     100% { transform: scale(0.8); }
 }
+
 
