@@ -19,7 +19,7 @@ body {
     left: 50%;
     
     /* ¡Este es el valor clave para que se vea! */
-    transform: translate(-120%, -10%); 
+    transform: translate(220%, -10%); 
         
     width: 95vw;
     height: 95vh;
@@ -133,6 +133,7 @@ body {
     position: fixed; 
     width: 20px;
     height: 20
+
 
 
 
