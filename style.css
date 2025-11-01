@@ -16,8 +16,8 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    /* MODIFICA ESTA LÍNEA PARA CAMBIAR LA ALTURA: */
-    transform: translate(-5%, -250%); 
+    /* ✅ Nuevo valor: Centrado horizontal (-50%) y subido un 40% más del centro (-90%) */
+    transform: translate(-50%, -90%); 
     z-index: 99;
 }
 #cake {
@@ -251,6 +251,7 @@ body {
     line-height: 1.2;
     margin: 0;
 }
+
 
 
 
