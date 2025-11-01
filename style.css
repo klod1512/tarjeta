@@ -45,7 +45,7 @@ body {
 .vela-cera {
     position: absolute;
     top: -80%; /* 💡 CAMBIO CRUCIAL: La vela empieza arriba del pastel */
-    left: 50%;
+    left: 90%;
     transform: translateX(-50%);
     opacity: 0; 
     visibility: hidden; 
