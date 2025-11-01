@@ -60,7 +60,7 @@ body {
 
 /* === POSICIÓN FINAL DE LA VELA (CAE SOBRE EL PASTEL) === */
 .cake-container.mostrar-vela .vela-cera {
-    top: 80%; 
+    top:90%; 
     left: 50%;
     opacity: 1; 
     visibility: visible; 
