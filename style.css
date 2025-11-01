@@ -16,20 +16,22 @@ body {
 /* ======================================= */
 /* AJUSTE DE POSICIÓN DEL PASTEL (Contenedor) */
 /* ======================================= */
+/* ======================================= */
+/* AJUSTE DE POSICIÓN DEL PASTEL (Contenedor) */
+/* ======================================= */
 .cake-container {
     position: absolute; 
     top: 50%; 
     left: 50%;
-    /* Usualmente se usa -50% para centrar, pero lo dejamos como está */
-    transform: translate(-95%, -10%); 
+    /* ❌ CAMBIO CLAVE: Usa -50%, -50% para centrarlo. */
+    transform: translate(-50%, -50%); /* <-- ¡Asegúrate de cambiar esto! */
         
     width: 95vw;
     height: 95vh;
     max-width: 400px; 
     max-height: 850px;
-    position: relative; /* Muy importante para posicionar la vela dentro */
+    position: relative; 
 }
-
 /* === SVG DEL PASTEL (AJUSTE INTERNO) === */
 #cake {
     width: 100%;
@@ -172,3 +174,4 @@ body {
     50% { transform: scale(1.2); }
     100% { transform: scale(0.8); }
 }
+
