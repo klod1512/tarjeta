@@ -18,7 +18,7 @@ body {
     left: 50%; /* Punto de origen horizontal: el centro de la pantalla */
     
     /* Mueve -100% horizontalmente (a la izquierda) y -50% verticalmente (hacia arriba) */
-    transform: translate(-100%, -50%); 
+    transform: translate(-90%, -10%); 
         
     width: 95vw;
     height: 95vh;
@@ -255,6 +255,7 @@ body {
     line-height: 1.2;
     margin: 0;
 }
+
 
 
 
