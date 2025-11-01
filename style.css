@@ -24,7 +24,6 @@ body {
     height: 95vh;
     max-width: 400px; 
     max-height: 850px;
-    position: relative; 
 }
 
 /* === SVG DEL PASTEL (AJUSTE INTERNO) === */
@@ -174,6 +173,7 @@ body {
     50% { transform: scale(1.2); }
     100% { transform: scale(0.8); }
 }
+
 
 
 
