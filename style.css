@@ -1,4 +1,4 @@
-https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -27,7 +27,7 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    /* Centrado horizontal (-50%) y subido un 40% más del centro (-90%) */
+    /* ✅ Nuevo valor: Centrado horizontal (-50%) y subido un 40% más del centro (-90%) */
     transform: translate(-50%, -90%); 
 }
 #cake {
@@ -40,23 +40,27 @@ body {
 /* ======================================= */
 /* AJUSTES DE VELA Y LLAMA */
 /* ======================================= */
+/* ======================================= */
+/* AJUSTES DE VELA Y LLAMA */
+/* ======================================= */
 
 /* === VELA (Posición inicial y apariencia) === */
 .vela-cera {
     position: absolute;
-    /* Inicia muy arriba para la caída */
+    /* 🟢 Correcto: Posición inicial fuera de vista */
     top: -80%; 
-    /* Inicia en el centro */
-    left: 50%; 
+    
+    /* 🟢 Correcto: Debe comenzar en el centro (50%) para caer en el centro */
+    left: 50%;
     
     transform: translateX(-50%);
     opacity: 0; 
     visibility: hidden; 
     
-    /* 🚀 CORRECCIÓN: SE AÑADE LA PROPIEDAD TRANSITION */
+    /* 🚀 LA LÍNEA CRUCIAL FALTANTE: Define el tiempo y tipo de movimiento */
     transition: 
         top 0.5s ease-in, /* La caída durará 0.5s y acelerará */
-        left 0.5s ease-out, 
+        left 0.5s ease-out, /* Si en algún momento cambias la posición horizontal, también se animará */
         opacity 0.5s ease-out; /* La vela aparecerá en 0.5s */
         
     z-index: 100;
@@ -67,16 +71,21 @@ body {
     border-radius: 2px;
 }
 
+
+
 /* === POSICIÓN FINAL DE LA VELA (CAE SOBRE EL PASTEL) === */
 .cake-container.mostrar-vela .vela-cera {
-    /* Posición final sobre el glaseado del pastel */
+    /* 🟢 CORRECCIÓN: Centrar horizontalmente sobre el pastel */
     left: 50%; 
-    top: -40%; 
+    
+    /* 🟢 AJUSTE: La posición final sobre el pastel (25% es una buena estimación) */
+    top: 25%; 
     
     opacity: 1; 
     visibility: visible; 
     transition-delay: .05s; 
 }
+
 
 
 .vela-cera.swaying {
@@ -240,7 +249,7 @@ body {
 .mini-card {
     width: 150px;
     padding: 15px;
-    /* El botón debe estar arriba del pastel. */
+    /* 🔑 CAMBIO: El botón debe estar arriba del pastel. */
     bottom: 300px; 
     left: 50%;
     transform: translateX(-50%);
