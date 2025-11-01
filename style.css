@@ -14,15 +14,15 @@ body {
 }
 .cake-container {
     position: absolute; 
-    top: 50%; /* Punto de origen vertical: la mitad de la pantalla */
-    left: 50%; /* Punto de origen horizontal: el centro de la pantalla */
+    top: 50%; 
+    left: 50%;
     
-    /* Mueve -100% horizontalmente (a la izquierda) y -50% verticalmente (hacia arriba) */
-    transform: translate(-90%, -10%); 
+    /* 🚀 CAMBIO: Moverlo -75% hacia arriba (eje Y) para que esté más elevado. */
+    transform: translate(-100%, -75%); 
         
     width: 95vw;
     height: 95vh;
-    max-width: 350px; /* Tamaño máximo recomendado para visibilidad */ 
+    max-width: 350px; 
     max-height: 750px;
 }
 /* === SVG DEL PASTEL (AJUSTE INTERNO) === */
@@ -255,6 +255,7 @@ body {
     line-height: 1.2;
     margin: 0;
 }
+
 
 
 
