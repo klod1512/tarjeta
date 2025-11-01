@@ -24,8 +24,8 @@ body {
     width: 95vw;
     height: 95vh;
     /* 🟢 Ajuste 2: Reducir el tamaño máximo para que no desborde en pantallas pequeñas. */
-    max-width: 350px; 
-    max-height: 750px;
+    max-width: 550px; 
+    max-height: 850px;
 }
 
 /* === SVG DEL PASTEL (AJUSTE INTERNO) === */
@@ -258,4 +258,5 @@ body {
     line-height: 1.2;
     margin: 0;
 }
+
 
