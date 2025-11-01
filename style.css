@@ -15,12 +15,10 @@ body {
 .cake-container {
     position: absolute; 
     top: 50%; 
-    
-    /* 🔑 AÑADIR: Esto lo centra HORIZONTALMENTE para que el transform funcione */
     left: 50%;
     
-    /* Mueve 300% de su ancho y -10% de su alto */
-    transform: translate(300%, -10%); 
+    /* 🔑 CAMBIO CLAVE: Usa 120% para que sea visible en el lado derecho. */
+    transform: translate(120%, -10%);  
         
     width: 95vw;
     height: 95vh;
@@ -175,6 +173,7 @@ body {
     50% { transform: scale(1.2); }
     100% { transform: scale(0.8); }
 }
+
 
 
 
