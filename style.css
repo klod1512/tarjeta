@@ -18,15 +18,15 @@ body {
     left: 50%; /* Punto de referencia horizontal: el centro de la pantalla */
     
     /* 1. POSICIÓN HORIZONTAL: Mueve el 100% de su ancho a la izquierda. */
-    /* 2. POSICIÓN VERTICAL: Mueve el 75% de su altura hacia arriba. */
-    transform: translate(-100%, -75%); 
+    /* 2. POSICIÓN VERTICAL: Mueve el 90% de su altura hacia arriba. (¡MÁS ALTO!) */
+    transform: translate(-100%, -90%); 
         
-    width: 90vw; /* Usa el 90% del ancho del viewport */
+    width: 90vw; 
     height: 95vh;
     
-    /* 3. DIMENSIONES MÁXIMAS: Limita el tamaño para móviles */
-    max-width: 320px; /* Tamaño máximo para que quepa bien en el POCO X7 */ 
-    max-height: 600px; /* Altura máxima para evitar desbordamiento */
+    /* 3. DIMENSIONES MÁXIMAS: Mantenemos los límites para móviles */
+    max-width: 320px; 
+    max-height: 600px; 
 }
 /* === SVG DEL PASTEL (AJUSTE INTERNO) === */
 #cake {
@@ -258,6 +258,7 @@ body {
     line-height: 1.2;
     margin: 0;
 }
+
 
 
 
