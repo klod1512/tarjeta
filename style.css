@@ -18,13 +18,14 @@ body {
     top: 50%; 
     left: 50%;
     
-    /* 🟢 CORREGIDO: Mueve el pastel del centro hacia la izquierda para que sea visible. */
-    transform: translate(-120%, -10%); 
+    /* 🟢 Ajuste 1: Lo movemos -100% (exactamente su propio ancho) a la izquierda. */
+    transform: translate(-100%, -10%); 
         
     width: 95vw;
     height: 95vh;
-    max-width: 400px; 
-    max-height: 850px;
+    /* 🟢 Ajuste 2: Reducir el tamaño máximo para que no desborde en pantallas pequeñas. */
+    max-width: 350px; 
+    max-height: 750px;
 }
 
 /* === SVG DEL PASTEL (AJUSTE INTERNO) === */
@@ -257,3 +258,4 @@ body {
     line-height: 1.2;
     margin: 0;
 }
+
