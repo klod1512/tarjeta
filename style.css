@@ -49,8 +49,11 @@ body {
 }
 
 /* === POSICIÓN FINAL DE LA VELA (CAE SOBRE EL PASTEL) === */
+/* === POSICIÓN FINAL DE LA VELA (CAE SOBRE EL PASTEL) === */
 .cake-container.mostrar-vela .vela-cera {
-    top: 80%; /* Posición final de caída */
+    /* ❌ ORIGINAL: top: 80%; */
+    /* ✅ CORREGIDO: Ajusta este valor (ej. 45% o menos) para que caiga sobre el top del pastel subido. */
+    top: 45%; 
     left: 50%;
     opacity: 1; 
     visibility: visible; 
@@ -251,6 +254,7 @@ body {
     line-height: 1.2;
     margin: 0;
 }
+
 
 
 
