@@ -44,32 +44,28 @@ body {
 /* === VELA (Posición inicial y apariencia) === */
 .vela-cera {
     position: absolute;
-    /* 🟢 CORRECCIÓN: Colocarla muy arriba para que el movimiento sea visible */
-    top: -80%; 
-    
-    /* 🟢 CORRECCIÓN: Debe comenzar en el centro (50%) para caer en el centro */
-    left: 50%;
-    
+    top: 60%; /* 💡 CAMBIO CRUCIAL: La vela empieza arriba del pastel */
+    left: 90%;
     transform: translateX(-50%);
     opacity: 0; 
     visibility: hidden; 
-    /* ... el resto de estilos ... */
+    transition: top 0.25s ease-out, opacity 0.25s ease-out, visibility 0s linear 0.25s; 
+    z-index: 100;
+    cursor: pointer;
+    width: 10px;
+    height: 60px;
+    background-color: #d23763;
+    border-radius: 2px;
 }
-
 
 /* === POSICIÓN FINAL DE LA VELA (CAE SOBRE EL PASTEL) === */
 .cake-container.mostrar-vela .vela-cera {
-    /* 🟢 CORRECCIÓN: Centrar horizontalmente sobre el pastel */
-    left: 50%; 
-    
-    /* 🟢 AJUSTE: La posición final sobre el pastel (25% es una buena estimación) */
-    top: 25%; 
-    
+    top:55%; 
+    left: 25%;
     opacity: 1; 
     visibility: visible; 
     transition-delay: .05s; 
 }
-
 
 
 .vela-cera.swaying {
@@ -319,7 +315,6 @@ body {
             <path fill="#794330" d="M173.667-13.94c-49.298,0-102.782,0-147.334,0c-3.999,0-4-16.002,0-16.002
              c44.697,0,96.586,0,147.334,0C177.667-29.942,177.668-13.94,173.667-13.94z">
                 <animate id="bizcocho_3" attributeName="d" calcMode="spline" keySplines="
-
 
 
 
