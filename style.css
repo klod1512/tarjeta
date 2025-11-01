@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -71,7 +71,7 @@ body {
 .cake-container.mostrar-vela .vela-cera {
     /* Posición final sobre el glaseado del pastel */
     left: 50%; 
-    top: 65%; 
+    top: -40%; 
     
     opacity: 1; 
     visibility: visible; 
