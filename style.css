@@ -27,7 +27,7 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    /* ✅ Nuevo valor: Centrado horizontal (-50%) y subido un 40% más del centro (-90%) */
+    /* Centrado horizontal (-50%) y subido un 40% más del centro (-90%) */
     transform: translate(-50%, -90%); 
 }
 #cake {
@@ -40,27 +40,23 @@ body {
 /* ======================================= */
 /* AJUSTES DE VELA Y LLAMA */
 /* ======================================= */
-/* ======================================= */
-/* AJUSTES DE VELA Y LLAMA */
-/* ======================================= */
 
 /* === VELA (Posición inicial y apariencia) === */
 .vela-cera {
     position: absolute;
-    /* 🟢 Correcto: Posición inicial fuera de vista */
+    /* Inicia muy arriba para la caída */
     top: -80%; 
-    
-    /* 🟢 Correcto: Debe comenzar en el centro (50%) para caer en el centro */
-    left: 50%;
+    /* Inicia en el centro */
+    left: 50%; 
     
     transform: translateX(-50%);
     opacity: 0; 
     visibility: hidden; 
     
-    /* 🚀 LA LÍNEA CRUCIAL FALTANTE: Define el tiempo y tipo de movimiento */
+    /* 🚀 CORRECCIÓN: SE AÑADE LA PROPIEDAD TRANSITION */
     transition: 
         top 0.5s ease-in, /* La caída durará 0.5s y acelerará */
-        left 0.5s ease-out, /* Si en algún momento cambias la posición horizontal, también se animará */
+        left 0.5s ease-out, 
         opacity 0.5s ease-out; /* La vela aparecerá en 0.5s */
         
     z-index: 100;
@@ -71,21 +67,16 @@ body {
     border-radius: 2px;
 }
 
-
-
 /* === POSICIÓN FINAL DE LA VELA (CAE SOBRE EL PASTEL) === */
 .cake-container.mostrar-vela .vela-cera {
-    /* 🟢 CORRECCIÓN: Centrar horizontalmente sobre el pastel */
+    /* Posición final sobre el glaseado del pastel */
     left: 50%; 
-    
-    /* 🟢 AJUSTE: La posición final sobre el pastel (25% es una buena estimación) */
     top: 25%; 
     
     opacity: 1; 
     visibility: visible; 
     transition-delay: .05s; 
 }
-
 
 
 .vela-cera.swaying {
@@ -249,7 +240,7 @@ body {
 .mini-card {
     width: 150px;
     padding: 15px;
-    /* 🔑 CAMBIO: El botón debe estar arriba del pastel. */
+    /* El botón debe estar arriba del pastel. */
     bottom: 300px; 
     left: 50%;
     transform: translateX(-50%);
