@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para el mejor novio del mundo - ¡Feliz Cumpleaños!</title>
+    
+    <link rel="stylesheet" href="style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+
+    <style>
 /* ======================================= */
 /* ESTILOS BASE */
 /* ======================================= */
@@ -31,37 +42,30 @@ body {
 /* ======================================= */
 
 /* === VELA (Posición inicial y apariencia) === */
-/* ======================================= */
-/* AJUSTES DE VELA Y LLAMA */
-/* ======================================= */
-
-/* === VELA (Posición inicial y apariencia) === */
 .vela-cera {
-    position: absolute;
-    top: -50%; /* 💡 CAMBIO CRUCIAL: La vela empieza arriba del pastel */
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0; 
-    visibility: hidden; 
-    transition: top 0.25s ease-out, opacity 0.25s ease-out, visibility 0s linear 0.25s; 
-    z-index: 100;
-    cursor: pointer;
-    width: 10px;
-    height: 60px;
-    background-color: #d23763;
-    border-radius: 2px;
+    position: absolute;
+    top: -50%; /* 💡 CAMBIO CRUCIAL: La vela empieza arriba del pastel */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0; 
+    visibility: hidden; 
+    transition: top 0.25s ease-out, opacity 0.25s ease-out, visibility 0s linear 0.25s; 
+    z-index: 100;
+    cursor: pointer;
+    width: 10px;
+    height: 60px;
+    background-color: #d23763;
+    border-radius: 2px;
 }
 
 /* === POSICIÓN FINAL DE LA VELA (CAE SOBRE EL PASTEL) === */
-/* Este valor ya está bien (45% es correcto) */
 .cake-container.mostrar-vela .vela-cera {
-    top: 45%; 
-    left: 50%;
-    opacity: 1; 
-    visibility: visible; 
-    transition-delay: .05s; 
+    top: 45%; 
+    left: 50%;
+    opacity: 1; 
+    visibility: visible; 
+    transition-delay: .05s; 
 }
-
 
 
 .vela-cera.swaying {
@@ -170,6 +174,40 @@ body {
     100% { transform: scale(0.8); }
 }
 
+
+/* ======================================= */
+/* ESTILOS DE CONFETI */
+/* ======================================= */
+.confetti-container {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0; 
+    left: 0;
+    pointer-events: none; 
+    overflow: hidden;
+    z-index: 500; 
+}
+
+.confetti {
+    position: fixed; 
+    width: 10px;
+    height: 10px;
+    background-color: #ffeb3b; 
+    opacity: 0;
+    animation: none;
+    border-radius: 150%;
+}
+
+.confetti-container.explode .confetti {
+    animation: confetti-fall 10s forwards ease-out; 
+}
+
+@keyframes confetti-fall {
+    0% { opacity: 1; transform: translate(0, 0) rotate(0deg); }
+    100% { opacity: 0; transform: translate(var(--x), var(--y)) rotate(var(--rot)); }
+}
+
 /* ======================================= */
 /* ESTILOS DE TARJETA */
 /* ======================================= */
@@ -188,12 +226,11 @@ body {
 }
 
 /* Mini Tarjeta (Botón para Abrir) */
-/* Mini Tarjeta (Botón para Abrir) */
 .mini-card {
     width: 150px;
     padding: 15px;
-    /* 🔑 CAMBIO: Aumenta el valor 'bottom' para subir el botón */
-    bottom:300px; 
+    /* 🔑 CAMBIO: El botón debe estar arriba del pastel. */
+    bottom: 300px; 
     left: 50%;
     transform: translateX(-50%);
     cursor: pointer;
@@ -258,37 +295,23 @@ body {
     line-height: 1.2;
     margin: 0;
 }
+    </style>
+</head>
+<body>
+    
+    <div class="cake-container">
+        
+        <div class="vela-cera" id="candle"> 
+            <div class="fuego-llama-onda">
+                <div class="fuego-onda"></div>
+                <div class="llama-onda"></div>
+            </div>
+        </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <svg id="cake" version="1.1" x="0px" y="0px" 
+             width="300px" height="750px" 
+             viewBox="0 0 200 500" 
+             enable-background="new 0 0 200 500" xml:space="preserve">
+            <path fill="#794330" d="M173.667-13.94c-49.298,0-102.782,0-147.334,0c-3.999,0-4-16.002,0-16.002
+             c44.697,0,96.586,0,147.334,0C177.667-29.942,177.668-13.94,173.667-13.94z">
+                <animate id="bizcocho_3" attributeName="d" calcMode="spline" keySplines="
