@@ -16,11 +16,10 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    /* Ajuste para que el pastel esté más arriba en la pantalla */
-    transform: translate(50%, -70%); 
+    /* MODIFICA ESTA LÍNEA PARA CAMBIAR LA ALTURA: */
+    transform: translate(-50%, -70%); 
     z-index: 99;
 }
-/* === SVG DEL PASTEL (AJUSTE INTERNO) === */
 #cake {
     width: 100%;
     height: auto;
@@ -252,6 +251,7 @@ body {
     line-height: 1.2;
     margin: 0;
 }
+
 
 
 
