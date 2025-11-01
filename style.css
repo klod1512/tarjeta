@@ -190,10 +190,12 @@ body {
 }
 
 /* Mini Tarjeta (Botón para Abrir) */
+/* Mini Tarjeta (Botón para Abrir) */
 .mini-card {
     width: 150px;
     padding: 15px;
-    bottom: 30px; 
+    /* 🔑 CAMBIO: Aumenta el valor 'bottom' para subir el botón */
+    bottom: 80px; 
     left: 50%;
     transform: translateX(-50%);
     cursor: pointer;
@@ -258,6 +260,7 @@ body {
     line-height: 1.2;
     margin: 0;
 }
+
 
 
 
