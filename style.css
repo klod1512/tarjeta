@@ -36,7 +36,7 @@ body {
     max-height: 850px;
     position: relative; 
 }
-}
+
 /* === SVG DEL PASTEL (AJUSTE INTERNO) === */
 #cake {
     width: 100%;
@@ -179,6 +179,7 @@ body {
     50% { transform: scale(1.2); }
     100% { transform: scale(0.8); }
 }
+
 
 
 
