@@ -40,21 +40,37 @@ body {
 /* ======================================= */
 /* AJUSTES DE VELA Y LLAMA */
 /* ======================================= */
+/* ======================================= */
+/* AJUSTES DE VELA Y LLAMA */
+/* ======================================= */
 
 /* === VELA (Posición inicial y apariencia) === */
 .vela-cera {
     position: absolute;
-    /* 🟢 CORRECCIÓN: Colocarla muy arriba para que el movimiento sea visible */
+    /* 🟢 Correcto: Posición inicial fuera de vista */
     top: -80%; 
     
-    /* 🟢 CORRECCIÓN: Debe comenzar en el centro (50%) para caer en el centro */
+    /* 🟢 Correcto: Debe comenzar en el centro (50%) para caer en el centro */
     left: 50%;
     
     transform: translateX(-50%);
     opacity: 0; 
     visibility: hidden; 
-    /* ... el resto de estilos ... */
+    
+    /* 🚀 LA LÍNEA CRUCIAL FALTANTE: Define el tiempo y tipo de movimiento */
+    transition: 
+        top 0.5s ease-in, /* La caída durará 0.5s y acelerará */
+        left 0.5s ease-out, /* Si en algún momento cambias la posición horizontal, también se animará */
+        opacity 0.5s ease-out; /* La vela aparecerá en 0.5s */
+        
+    z-index: 100;
+    cursor: pointer;
+    width: 10px;
+    height: 60px;
+    background-color: #d23763;
+    border-radius: 2px;
 }
+
 
 
 /* === POSICIÓN FINAL DE LA VELA (CAE SOBRE EL PASTEL) === */
