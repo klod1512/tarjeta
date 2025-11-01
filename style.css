@@ -44,7 +44,7 @@ body {
 /* === VELA (Posición inicial y apariencia) === */
 .vela-cera {
     position: absolute;
-    top: 50%; /* 💡 CAMBIO CRUCIAL: La vela empieza arriba del pastel */
+    top: -50%; /* 💡 CAMBIO CRUCIAL: La vela empieza arriba del pastel */
     left: 50%;
     transform: translateX(-50%);
     opacity: 0; 
@@ -60,9 +60,9 @@ body {
 
 /* === POSICIÓN FINAL DE LA VELA (CAE SOBRE EL PASTEL) === */
 .cake-container.mostrar-vela .vela-cera {
-    top:34%; 
+    top:20%; 
     left: 50%;
-    opacity: 1; 
+    opacity: 0; 
     visibility: visible; 
     transition-delay: .05s; 
 }
