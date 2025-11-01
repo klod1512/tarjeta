@@ -16,10 +16,10 @@ body {
 .cake-container {
     position: absolute; 
     top: 50%; 
-    left: 50%; /* 🔑 CORRECCIÓN 1: Centra el punto de origen horizontalmente */
+    left: 50%;
     
-    /* 🔑 CORRECCIÓN 2: Reduce 300% a 120% para que el pastel quede visible en el lado derecho */
-    transform: translate(-120%, -10%); 
+    /* ¡Este es el valor clave para que se vea! */
+    transform: translate(120%, -10%); 
         
     width: 95vw;
     height: 95vh;
@@ -133,4 +133,5 @@ body {
     position: fixed; 
     width: 20px;
     height: 20
+
 
