@@ -62,17 +62,7 @@ body {
     transition-delay: .05s; 
 }
 
-/* === POSICIÓN FINAL DE LA VELA (CAE SOBRE EL PASTEL) === */
-/* === POSICIÓN FINAL DE LA VELA (CAE SOBRE EL PASTEL) === */
-.cake-container.mostrar-vela .vela-cera {
-    /* ❌ ORIGINAL: top: 80%; */
-    /* ✅ CORREGIDO: Ajusta este valor (ej. 45% o menos) para que caiga sobre el top del pastel subido. */
-    top: 45%; 
-    left: 50%;
-    opacity: 1; 
-    visibility: visible; 
-    transition-delay: .05s; 
-}
+
 
 .vela-cera.swaying {
     animation: candle-sway 3s infinite alternate ease-in-out;
@@ -268,6 +258,7 @@ body {
     line-height: 1.2;
     margin: 0;
 }
+
 
 
 
