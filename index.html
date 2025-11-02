@@ -5,183 +5,298 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Para el mejor novio del mundo - ¡Feliz Cumpleaños!</title>
     
-    <link rel="stylesheet" href="style.css"> <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
 
     <style>
- body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            color: rgb(233, 226, 238);
-            background-color: rgb(81, 26, 81);
-            overflow: hidden; 
-        }
-        .birthday-text {
-            position: fixed;
-            top: 50px; 
-            left: 50%;
-            transform: translateX(-50%);
-            text-align: center;
-            z-index: 20;
-            opacity: 0;
-            transition: opacity 1s;
-            font-family: 'Gloria Hallelujah,cursive;
-            font-size: 2em;
-            pointer-events: none;
-            width: 90%;
-            max-width: 400px;
-        }
-        .birthday-text h1 {
-            font-size: 1em;
-            line-height: 1.2;
-            margin: 0;
-        }
+/* ======================================= */
+/* ESTILOS BASE */
+/* ======================================= */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: rgb(233, 226, 238);
+    background-color: rgb(81, 26, 81); /* Fondo Morado */
+    overflow: hidden; 
+    font-family: 'Gloria Hallelujah', cursive; /* Asegurar la fuente en el body */
+}
+.cake-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* Centrado horizontal y subido -90% */
+    transform: translate(-50%, -90%); 
+}
+#cake {
+    width: 100%;
+    height: auto;
+    display: block;
+    transform: translateY(-80px); 
+}
+
+/* ======================================= */
+/* AJUSTES DE VELA Y LLAMA */
+/* ======================================= */
+
+/* === VELA (Posición inicial y apariencia) === */
+.vela-cera {
+    position: absolute;
+    /* Inicia muy arriba para que la caída sea visible */
+    top: -80%; 
+    /* Inicia en el centro */
+    left: 50%;
+    
+    transform: translateX(-50%);
+    opacity: 0; 
+    visibility: hidden; 
+    
+    /* 🚀 CORRECCIÓN: Se añade la transición para el movimiento */
+    transition: 
+        top 0.5s ease-in, /* Movimiento vertical de 0.5s */
+        opacity 0.5s ease-out; /* Aparición gradual */
         
-        /* ======================================= */
-        /* ESTILOS DE CONFETI, HUMO Y DESTELLO */
-        /* ======================================= */
-        
-        .confetti-container {
-            position: fixed;
-            width: 100vw;
-            height: 100vh;
-            top: 0; 
-            left: 0;
-            pointer-events: none; 
-            overflow: hidden;
-            z-index: 500; 
-        }
-        
-        .confetti {
-            position: fixed; 
-            width: 10px;
-            height: 10px;
-            background-color: #ffeb3b; 
-            opacity: 0;
-            animation: none;
-            border-radius: 150%;
-        }
+    z-index: 100;
+    cursor: pointer;
+    width: 10px;
+    
+    /* 🟢 CORRECCIÓN: PROPIEDADES FALTANTES PARA QUE LA VELA SEA VISIBLE */
+    height: 60px;
+    background-color: #d23763; /* Color de la cera */
+    border-radius: 2px;
+}
 
-        .confetti-container.explode .confetti {
-            animation: confetti-fall 10s forwards ease-out; 
-        }
+/* === POSICIÓN FINAL DE LA VELA (CAE SOBRE EL PASTEL) === */
+.cake-container.mostrar-vela .vela-cera {
+    /* Centrado horizontal */
+    left: 50%; 
+    
+    /* 🟢 ALTURA AJUSTADA para que quede sobre el pastel (ej: 35%) */
+    top: 35%; 
+    
+    opacity: 1; 
+    visibility: visible; 
+    transition-delay: .05s; 
+}
 
-        @keyframes confetti-fall {
-            0% { opacity: 1; transform: translate(0, 0) rotate(0deg); }
-            100% { opacity: 0; transform: translate(var(--x), var(--y)) rotate(var(--rot)); }
-        }
 
-        .smoke-puff {
-            position: fixed; 
-            width: 20px;
-            height: 20px;
-            background-color: #7b7878; 
-            border-radius: 50%; 
-            filter: blur(5px); 
-            opacity: 0; 
-            transform: scale(0); 
-            z-index: 9; 
-            pointer-events: none; 
-            transition: opacity 1.5s ease-out, transform 1.5s ease-out, top 1.5s ease-out;
-        }
+.vela-cera.swaying {
+    animation: candle-sway 3s infinite alternate ease-in-out;
+}
 
-        .smoke-puff.active {
-            opacity: 0.8; 
-            transform: scale(4); 
-        }
+/* 🟢 KEYFRAME PARA EL BALANCEO DE LA VELA (candle-sway) */
+@keyframes candle-sway {
+    0% { transform: translateX(-50%) rotate(-1.5deg); }
+    100% { transform: translateX(-50%) rotate(1.5deg); }
+}
 
-        .hint-glow {
-            position: fixed; 
-            width: 20px;
-            height: 20px;
-            background: radial-gradient(circle, rgba(255, 255, 83, 0.8) 0%, rgba(255, 200, 0, 0) 70%);
-            border-radius: 50%;
-            z-index: 15; 
-            pointer-events: none;
-            opacity: 0;
-            transition: opacity 0.5s;
-        }
+/* === LLAMA (Contenedor de fuego y llama) === */
+.fuego-llama-onda {
+    position: absolute;
+    width: 15px; 
+    height: 35px;
+    top: -30px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    transform-origin: bottom center;
+}
 
-        @keyframes glow-pulse {
-            0% { transform: scale(0.8); }
-            50% { transform: scale(1.2); }
-            100% { transform: scale(0.8); }
-        }
+.fuego-onda {
+    position: absolute;
+    width: 15px; 
+    height: 35px;
+    background-color: orange;
+    border-radius: 50%; 
+    filter: blur(5px);
+    opacity: 0.8;
+    z-index: 11;
+    animation: fuego-sway 0.5s infinite alternate;
+}
 
-        .hint-glow.visible {
-            opacity: 1;
-            animation: glow-pulse 1s infinite alternate;
-        }
-        
-        /* ======================================= */
-        /* ESTILOS DE TARJETA */
-        /* ======================================= */
-        .mini-card, .expanded-card {
-            background-color: white;
-            color: black;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            text-align: center;
-            font-family:'Gloria Hallelujah';
-            z-index: 100;
-            position: fixed;
-            transition: all 0.5s ease-in-out;
-            opacity: 0;
-            visibility: hidden;
-        }
+.llama-onda {
+    position: absolute;
+    width: 10px; 
+    height: 25px; 
+    background-color: yellow;
+    border-radius: 50%;
+    filter: blur(3px); 
+    opacity: 0.9;
+    top: 5px; 
+    left: 2.5px;
+    z-index: 12;
+    animation: llama-sway 0.5s infinite alternate;
+}
 
-        /* Mini Tarjeta (Botón para Abrir) */
-        .mini-card {
-            width: 150px;
-            padding: 15px;
-            bottom: 30px; 
-            left: 50%;
-            transform: translateX(-50%);
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 1.1em;
-        }
-        .mini-card.visible {
-            opacity: 1;
-            visibility: visible;
-        }
+/* === Animaciones de movimiento suave para la llama === */
+@keyframes fuego-sway {
+    0% { transform: translateX(0px); }
+    100% { transform: translateX(1px); }
+}
+@keyframes llama-sway {
+    0% { transform: translateX(0px) rotate(1deg); }
+    100% { transform: translateX(-1px) rotate(-1deg); }
+}
 
-        /* Tarjeta Expandida (Mensaje Largo) */
-        .expanded-card {
-            width: 90vw;
-            max-width: 450px;
-            height: 80vh;
-            max-height: 600px;
-            padding: 20px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            overflow-y: scroll;
-            text-align: left;
-            line-height: 1.6;
-        }
-        .expanded-card.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .close-btn {
-            position: sticky;
-            top: 0;
-            float: right;
-            font-size: 2em;
-            cursor: pointer;
-            color: #d23763;
-            background: white;
-            padding: 0 5px;
-            border-radius: 50%;
-            line-height: 0.8;
-        }
-        
+/* ======================================= */
+/* ESTILOS DE CONFETI, HUMO Y DESTELLO */
+/* ======================================= */
+.birthday-text {
+    position: fixed;
+    top: 50px; 
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 20;
+    opacity: 0;
+    transition: opacity 1s;
+    font-family: 'Gloria Hallelujah', cursive; /* Corrección de sintaxis */
+    font-size: 2em;
+    pointer-events: none;
+    width: 90%;
+    max-width: 400px;
+}
+.birthday-text h1 {
+    font-size: 1em;
+    line-height: 1.2;
+    margin: 0;
+}
+.confetti-container {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0; 
+    left: 0;
+    pointer-events: none; 
+    overflow: hidden;
+    z-index: 500; 
+}
 
-        
+.confetti {
+    position: fixed; 
+    width: 10px;
+    height: 10px;
+    background-color: #ffeb3b; 
+    opacity: 0;
+    animation: none;
+    border-radius: 150%;
+}
+
+.confetti-container.explode .confetti {
+    animation: confetti-fall 10s forwards ease-out; 
+}
+
+@keyframes confetti-fall {
+    0% { opacity: 1; transform: translate(0, 0) rotate(0deg); }
+    100% { opacity: 0; transform: translate(var(--x), var(--y)) rotate(var(--rot)); }
+}
+
+.smoke-puff {
+    position: fixed; 
+    width: 20px;
+    height: 20px;
+    background-color: #7b7878; 
+    border-radius: 50%; 
+    filter: blur(5px); 
+    opacity: 0; 
+    transform: scale(0); 
+    z-index: 9; 
+    pointer-events: none; 
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out, top 1.5s ease-out;
+}
+
+.smoke-puff.active {
+    opacity: 0.8; 
+    transform: scale(4); 
+}
+
+.hint-glow {
+    position: fixed; 
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, rgba(255, 255, 83, 0.8) 0%, rgba(255, 200, 0, 0) 70%);
+    border-radius: 50%;
+    z-index: 15; 
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+@keyframes glow-pulse {
+    0% { transform: scale(0.8); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(0.8); }
+}
+
+.hint-glow.visible {
+    opacity: 1;
+    animation: glow-pulse 1s infinite alternate;
+}
+
+/* ======================================= */
+/* ESTILOS DE TARJETA */
+/* ======================================= */
+.mini-card, .expanded-card {
+    background-color: white;
+    color: black;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    font-family:'Gloria Hallelujah', cursive; /* Corrección de sintaxis */
+    z-index: 100;
+    position: fixed;
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Mini Tarjeta (Botón para Abrir) */
+.mini-card {
+    width: 150px;
+    padding: 15px;
+    bottom: 30px; 
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+.mini-card.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Tarjeta Expandida (Mensaje Largo) */
+.expanded-card {
+    width: 90vw;
+    max-width: 450px;
+    height: 80vh;
+    max-height: 600px;
+    padding: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow-y: scroll;
+    text-align: left;
+    line-height: 1.6;
+}
+.expanded-card.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.close-btn {
+    position: sticky;
+    top: 0;
+    float: right;
+    font-size: 2em;
+    cursor: pointer;
+    color: #d23763;
+    background: white;
+    padding: 0 5px;
+    border-radius: 50%;
+    line-height: 0.8;
+}
     </style>
 </head>
 <body>
@@ -361,8 +476,9 @@
             <rect x="10" y="475.571" fill="#fefae9" width="180" height="4" />
         </svg>
     
-            </div>
-    <div class="birthday-text"></div>
+    </div>
+    
+    <div class="birthday-text"></div>
     <div class="confetti-container" id="confettiContainer"></div>
     
     <div class="mini-card" id="miniCard">
@@ -370,189 +486,150 @@
     </div>
     
     <div class="expanded-card" id="expandedCard">
-        <span class="close-btn" id="closeCardBtn">&times;</span>
-
-        <p>Mi amor, mi vida, mi donita de chocolate :3
-        <br><br>
-        Primero antes que nada, espero que hayas pasado un día muy bonito, mi veinteañero precioso, hermoso, chiquitito jajaja, mi viejito. Entras a la etapa donde uno se queda dormido a las 9:00 p.m., jajaja.
-        <br><br>
-        A pesar de mis intentos fallidos de sorprenderte, quiero que seas consciente de que todos esos pequeños detalles son de todo corazón, porque yo te amo. Merezcas todo el amor del mundo por el corazón tan bonito que tienes; lo digo sinceramente, eres tan único que siento que me saqué la lotería contigo.
-        <br><br>
-        Eres tan honesto, tan directo jajaja, que a veces no sé qué responder. Me sigues poniendo nerviosa, ¡te amo!
-        <br><br>
-        Mi amor, hay algo más que mi corazón siente por ti, y es un profundo respeto. Respeto tu integridad, tus decisiones y la manera tan firme y honesta en la que llevas tu vida. No solo te amo, te admiro, y esa combinación es lo que me impulsa a ser mejor.
-        <br><br>
-        Sé que no pude estar a tu lado como quería, pero mi corazón está ahí. Me has demostrado que el amor verdadero no necesita planes perfectos, solo honestidad y paciencia (y sí, un poquito de mis celos, jaja). Yo sé que te había dicho que quería estar contigo ese día, pero no fue posible, y por eso me disculpo; pero le prometo que el próximo año así será. También tenía algo planeado para hacer ese día que hubiera sido perfecto. Bueno, el próximo año tu cumpleaños será un domingo, entonces creo que sí podremos hacer algo :3, jajaja, sin tener que estar sufriendo desde inicios de mes. ¡Te amoooooo!
-        <br><br>
-        Eres una persona increíble que quiero que sea solo mío :c. Sé que es egoísta, pero te quiero solo para mí, y para una persona tan celosa no es fácil, jajajaja. Te prometo que la distancia acabará y vamos a ser felices. Ya hicimos lo más difícil, que fue encontrarnos entre tantas personas y tantos kilómetros :3. Ahora hay que saber mantenernos, y sé que no siempre va a ser bonito y meloso, pero es parte de crecer juntos. Yo voy a tratar de que en serio funcione porque quiero que funcione, quiero que seas tú.
-        <br><br>
-        Mi amor, hay algo más que quiero que sepas con total certeza: mi corazón es tuyo y solo tuyo. Puedes tener la seguridad absoluta de que mi lealtad es inquebrantable. Jamás tendrás que preocuparte por eso, porque lo nuestro es real, es serio, y la infidelidad no tiene cabida en esta historia que estamos construyendo. Mi compromiso contigo es total.
-        <br><br>
-        Pero tenme paciencia, porque estoy experimentando sentimientos nuevos :'v y sí me cuesta un poquito, pero de verdad que lo intento.
-        <br><br>
-        Sé que te dije que apenas lleguemos nos íbamos a casar, pero realmente quiero hacer las cosas bien, jajajaj. Primero tenemos que ir donde tus padres y que ellos estén de acuerdo, y si no llegaran a estarlo, lo voy a seguir intentando, mi niño hermoso. Eres el hombre de mi vida. Estoy en el punto en que te pienso todo el día, todos los días, y solo eres tú, tú, tú y túúúúúúu
-        Me tienes como una loca con esa risa que no me puedo sacar de la cabeza, esos ojitos hermosos, esa voz, esa piel tan linda y ese cuerpo ♥‿♥. Y aclaro que no estoy diciendo que por eso me enamoré, solo que fue premio doble y yo más que feliz, jajajajaja. Además, tú fuiste quien me mandó. Dejando eso en fuera, eres alguien que inspira mucho, alguien que te da confianza, y amo mucho eso. Eres la mejor persona de mi vida <3.
-        <br><br>
-        P.D. el pastel es de arequipe.
-        </p>
-
+        <span class="close-btn" onclick="closeCard()">×</span>
+        <h2>¡Feliz Cumpleaños, Mi Amor!</h2>
+        <p>Este es solo un pequeño detalle para recordarte lo especial que eres para mí.</p>
+        <p>¡Eres el mejor novio del mundo! Gracias por cada risa, cada abrazo y por hacer mi vida mucho más dulce. Espero que este día esté lleno de alegría y cosas bonitas, justo como tú.</p>
+        <p>Te amo muchísimo, con todo mi corazón.</p>
+        <p>Con amor, [Tu Nombre]</p>
     </div>
     
     <script>
-        // La lógica del pastel ya no requiere un archivo script.js separado, está aquí.
-        
-        // Referencias a los elementos
+        // =======================================
+        // CÓDIGO JAVASCRIPT
+        // =======================================
+
         const cakeContainer = document.querySelector('.cake-container');
-        const candle = document.getElementById('candle'); 
-        const flame = document.querySelector('.fuego-llama-onda'); 
-        const confettiContainer = document.getElementById('confettiContainer'); // Usamos el ID en el cuerpo
-        const birthdayText = document.querySelector('.birthday-text');
-        
-        // Referencias a los elementos de la tarjeta
+        const candle = document.getElementById('candle');
         const miniCard = document.getElementById('miniCard');
         const expandedCard = document.getElementById('expandedCard');
-        const closeCardBtn = document.getElementById('closeCardBtn');
+        const birthdayText = document.querySelector('.birthday-text');
+        const confettiContainer = document.getElementById('confettiContainer');
 
-        // La duración total de la animación del pastel es de ~6.8 segundos
-        setTimeout(() => {
-            cakeContainer.classList.add('mostrar-vela'); // La vela "cae" sobre el pastel
+        let isLit = false;
+
+        // 1. Mostrar la vela con la animación de caída (añadir la clase 'mostrar-vela')
+        function showCandle() {
+            // Animación del pastel (si aplica, con el SVG)
+            // Se asume que en este punto la animación SVG ya comenzó o terminó.
             
-            // 1. INICIAR HONDEO Y TEMPORIZADOR DE REFLEJOS
-            candle.classList.add('swaying'); 
+            // Muestra el contenedor de la vela y activa la caída/posición final
+            cakeContainer.classList.add('mostrar-vela');
+            candle.classList.add('swaying');
+        }
 
-            // Esperar 0.5 segundos, y luego crear los destellos
+        // 2. Encender la vela (opcional, si quieres que la llama aparezca después)
+        // Por ahora, asumimos que la llama está siempre encendida en el CSS a menos que se sople.
+
+        // 3. Soplar la vela (blowCandle - evento principal)
+        function blowCandle() {
+            if (!isLit) return;
+
+            // 3.1 Apagar/Ocultar la llama
+            const flame = candle.querySelector('.fuego-llama-onda');
+            flame.style.opacity = '0';
+            flame.style.transition = 'opacity 0.2s ease-out';
+            
+            candle.classList.remove('swaying');
+            isLit = false;
+
+            // 3.2 Activar el humo
+            createSmokePuff(candle);
+            
+            // 3.3 Mostrar el texto de Feliz Cumpleaños
+            birthdayText.innerHTML = '<h1>¡FELIZ CUMPLEAÑOS!</h1>';
+            birthdayText.style.opacity = '1';
+
+            // 3.4 Iniciar el Confetti
+            initConfetti();
+            
+            // 3.5 Mostrar la tarjeta
             setTimeout(() => {
-                
-                // 2. CREAR Y POSICIONAR LOS REFLEJOS/DESTELLOS
-                const flameRect = flame.getBoundingClientRect();
-                const flameCenterX = flameRect.left + (flameRect.width / 2);
-                const flameCenterY = flameRect.top;
+                miniCard.classList.add('visible');
+            }, 1000); 
+        }
 
-                // Función para crear y posicionar un destello
-                const createGlow = (offsetX) => {
-                    const glow = document.createElement('div');
-                    glow.classList.add('hint-glow');
-                    glow.classList.add('visible');
-                    
-                    glow.style.position = 'fixed';
-                    // Usar clientX/Y para posicionar el glow basado en la llama
-                    glow.style.left = `${flameCenterX + offsetX}px`;
-                    glow.style.top = `${flameCenterY + 5}px`; 
-                    
-                    document.body.appendChild(glow);
-                    return glow;
-                };
+        // Función para simular el "soplido" (usando un simple click para prueba)
+        candle.addEventListener('click', () => {
+             // Simular que está "encendida" si ya está en el pastel
+            if(cakeContainer.classList.contains('mostrar-vela') && !isLit) {
+                isLit = true; // Para pruebas, la encendemos con el primer click
+                // En una app real, el primer click podría ser para encenderla
+            }
+            // El segundo click simula el soplido
+            if(isLit) {
+                blowCandle();
+            }
+        });
 
-                createGlow(-40); 
-                createGlow(20); 
+        // 4. Funciones de Efectos
 
-            }, 500); 
-
-            // 3. EVENTO DE CLICK EN LA VELA
-            candle.addEventListener('click', () => {
-                
-                // APAGAR FLAMA Y OCULTAR DESTELLOS
-                flame.style.visibility = 'hidden';
-                flame.style.opacity = '0';
-                candle.classList.remove('swaying'); 
-                document.querySelectorAll('.hint-glow').forEach(glow => glow.remove());
-                
-                // CREAR Y ANIMAR EL HUMO
-                const smokePuff = document.createElement('div');
-                smokePuff.classList.add('smoke-puff');
-                
-                const currentFlameRect = flame.getBoundingClientRect(); 
-                const explosionCenterX = currentFlameRect.left + (currentFlameRect.width / 2);
-                const explosionCenterY = currentFlameRect.top + (currentFlameRect.height / 2);
-
-                smokePuff.style.left = `${explosionCenterX - 15}px`; 
-                smokePuff.style.top = `${explosionCenterY - 15}px`;
-
-                document.body.appendChild(smokePuff); 
-                
-                setTimeout(() => {
-                    smokePuff.classList.add('active');
-                    smokePuff.style.top = `${explosionCenterY - 40}px`; 
-                    
-                    setTimeout(() => {
-                        smokePuff.remove();
-                    }, 1500); 
-                }, 50); 
-                
-                
-                // ACTIVAR CONFETI
-            // ... dentro del listener de click de la vela ...
-
-// ACTIVAR CONFETI
-const candleRect = candle.getBoundingClientRect();
-const explosionConfettiX = candleRect.left + (candleRect.width / 2); // X de la explosión (centro)
-const explosionConfettiY = candleRect.top; // Y de la explosión (parte superior de la vela)
-
-// 🐛 CORRECCIÓN: El bucle debe contener toda la lógica de creación del elemento
-for (let i = 0; i < 500; i++) {
-    const confetti = document.createElement('div');
-
-    confetti.classList.add('confetti');
-
-    const initialX = (Math.random() * 40) - 20 + explosionConfettiX;
-    const initialY = (Math.random() * 40) - 20 + explosionConfettiY;
-
-    confetti.style.position = 'fixed';
-    confetti.style.left = `${initialX}px`;
-    confetti.style.top = `${initialY}px`;
-
-    confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`;
-    confetti.style.setProperty('--x', `${(Math.random() - 0.5) * 4000}px`);
-    confetti.style.setProperty('--y', `${Math.random() * 2000 + 500}px`);
-    confetti.style.setProperty('--rot', `${Math.random() * 1000}deg`);
-
-    confettiContainer.appendChild(confetti);
-} // <--- El bucle cierra aquí, correctamente.
-confettiContainer.classList.add('explode');
-                
-                // Muestra el mensaje de Feliz Cumpleaños
-                birthdayText.innerHTML = "<h1>¡Feliz Cumpleaños al mejor novio del mundo!❤ </h1>";
-                birthdayText.style.opacity = '1'
-
+        // Crea una nube de humo que sube y desaparece
+        function createSmokePuff(element) {
+            const rect = element.getBoundingClientRect();
+            const smoke = document.createElement('div');
+            smoke.classList.add('smoke-puff');
             
-                // Muestra la mini-tarjeta después del mensaje/confeti
-                setTimeout(() => {
-                    miniCard.classList.add('visible'); 
-                }, 4000); // Muestra la tarjeta 4s después del apagado
-            });
+            // Posicionamiento inicial cerca de la vela
+            smoke.style.left = `${rect.left + rect.width / 2}px`;
+            smoke.style.top = `${rect.top - 10}px`; 
             
-            // Lógica para Abrir la Tarjeta Expandida
-            miniCard.addEventListener('click', () => {
-                expandedCard.classList.add('visible'); 
-                expandedCard.scrollTop = 0; // Fuerza el scroll al inicio
-                miniCard.classList.remove('visible'); 
-            });
-
-            // Lógica para Cerrar la Tarjeta Expandida
-            closeCardBtn.addEventListener('click', () => {
-                expandedCard.classList.remove('visible');
-                miniCard.classList.add('visible'); 
-            });
+            document.body.appendChild(smoke);
             
-        }, 1000); // 7000ms = Esperar 7 segundos para que el pastel se construya.
+            // Activar la animación después de un breve retraso
+            setTimeout(() => {
+                smoke.classList.add('active');
+                // Hacer que suba
+                smoke.style.top = `${rect.top - 300}px`; 
+            }, 10);
 
+            // Eliminar el humo después de la animación
+            setTimeout(() => {
+                smoke.remove();
+            }, 6000); 
+        }
+
+
+        // Generador de Confeti
+        function initConfetti() {
+            const count = 100;
+            const colors = ['#f44336', '#e91e63', '#9c27b0', '#673ab7', '#3f51b5', '#2196f3', '#03a9f4', '#00bcd4', '#009688', '#4caf50', '#8bc34a', '#cddc39', '#ffeb3b', '#ffc107', '#ff9800', '#ff5722', '#795548', '#9e9e9e', '#607d8b'];
+            
+            for (let i = 0; i < count; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                
+                // Posición inicial cerca del pastel
+                confetti.style.left = `${Math.random() * 20 + 40}vw`; 
+                confetti.style.top = `${Math.random() * 20 + 40}vh`; 
+                
+                // Definir las variables de CSS para la animación de caída
+                confetti.style.setProperty('--x', `${(Math.random() - 0.5) * 500}px`);
+                confetti.style.setProperty('--y', `${window.innerHeight + 200}px`);
+                confetti.style.setProperty('--rot', `${Math.random() * 1000}deg`);
+                
+                confettiContainer.appendChild(confetti);
+            }
+            // Activa la animación del confeti
+            confettiContainer.classList.add('explode');
+        }
+
+        // 5. Lógica de la Tarjeta
+        miniCard.addEventListener('click', () => {
+            miniCard.classList.remove('visible');
+            expandedCard.classList.add('visible');
+        });
+
+        function closeCard() {
+            expandedCard.classList.remove('visible');
+            // Opcional: Volver a mostrar la mini-card
+            // miniCard.classList.add('visible');
+        }
+
+        // Iniciar la secuencia: mostrar la vela después de un retraso
+        // Simulación: La vela aparece 1 segundo después de cargar la página
+        setTimeout(showCandle, 1000); 
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
